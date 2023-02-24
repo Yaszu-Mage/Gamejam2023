@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="MarginContainer" type="MarginContainer"]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 120.0
+margin_bottom = 80.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
