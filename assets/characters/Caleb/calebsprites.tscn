@@ -1,150 +1,26 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/characters/Caleb/16x16/tile050.png" type="Texture" id=1]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile006.png" type="Texture" id=2]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile020.png" type="Texture" id=3]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile015.png" type="Texture" id=4]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile022.png" type="Texture" id=5]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile005.png" type="Texture" id=6]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile095.png" type="Texture" id=7]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile110.png" type="Texture" id=8]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile093.png" type="Texture" id=9]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile004.png" type="Texture" id=10]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile014.png" type="Texture" id=11]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile117.png" type="Texture" id=12]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile028.png" type="Texture" id=13]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile007.png" type="Texture" id=14]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile108.png" type="Texture" id=15]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile096.png" type="Texture" id=16]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile098.png" type="Texture" id=17]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile119.png" type="Texture" id=18]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile123.png" type="Texture" id=19]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile121.png" type="Texture" id=20]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile013.png" type="Texture" id=21]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile021.png" type="Texture" id=22]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile029.png" type="Texture" id=23]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile030.png" type="Texture" id=24]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile031.png" type="Texture" id=25]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile012.png" type="Texture" id=26]
-[ext_resource path="res://assets/characters/Caleb/16x32/tile023.png" type="Texture" id=27]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile032.png" type="Texture" id=28]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile033.png" type="Texture" id=29]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile001.png" type="Texture" id=30]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile003.png" type="Texture" id=31]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile000.png" type="Texture" id=32]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile002.png" type="Texture" id=33]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile018.png" type="Texture" id=34]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile016.png" type="Texture" id=35]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile024.png" type="Texture" id=36]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile034.png" type="Texture" id=37]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile017.png" type="Texture" id=38]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile027.png" type="Texture" id=39]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile009.png" type="Texture" id=40]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile025.png" type="Texture" id=41]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile026.png" type="Texture" id=42]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile070.png" type="Texture" id=43]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile057.png" type="Texture" id=44]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile056.png" type="Texture" id=45]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile067.png" type="Texture" id=46]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile065.png" type="Texture" id=47]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile068.png" type="Texture" id=48]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile088.png" type="Texture" id=49]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile058.png" type="Texture" id=50]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile090.png" type="Texture" id=51]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile008.png" type="Texture" id=52]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile010.png" type="Texture" id=53]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile035.png" type="Texture" id=54]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile011.png" type="Texture" id=55]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile019.png" type="Texture" id=56]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile048.png" type="Texture" id=57]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile051.png" type="Texture" id=58]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile059.png" type="Texture" id=59]
-[ext_resource path="res://assets/characters/Caleb/16x16/tile049.png" type="Texture" id=60]
+[ext_resource path="res://assets/characters/caleb.res" type="SpriteFrames" id=1]
+[ext_resource path="res://assets/maps/movement.gd" type="Script" id=61]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "dodgedown",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 43 ) ],
-"loop": true,
-"name": "downslash",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 31 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 21 ), ExtResource( 11 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "leftdodge",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 52 ), ExtResource( 40 ), ExtResource( 53 ), ExtResource( 55 ) ],
-"loop": true,
-"name": "leftidle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "leftslash",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 22 ), ExtResource( 5 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "rightdodge",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 35 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 56 ) ],
-"loop": true,
-"name": "rightidle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "rightslash",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 57 ), ExtResource( 60 ), ExtResource( 1 ), ExtResource( 58 ) ],
-"loop": true,
-"name": "rightwalk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "updodge",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "upidle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 49 ), ExtResource( 51 ), ExtResource( 9 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "upslash",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 59 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 50 ) ],
-"loop": true,
-"name": "upwalk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 54 ) ],
-"loop": true,
-"name": "walkdown",
-"speed": 5.0
-} ]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 15 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 61 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
-frames = SubResource( 1 )
-animation = "updodge"
+scale = Vector2( 0.930655, 1.00701 )
+frames = ExtResource( 1 )
+animation = "leftwalk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+zoom = Vector2( 0.4, 0.4 )
+smoothing_enabled = true
