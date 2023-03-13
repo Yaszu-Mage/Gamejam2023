@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=61 format=2]
+[gd_resource type="SpriteFrames" load_steps=64 format=2]
 
 [ext_resource path="res://assets/characters/Caleb/16x32/tile005.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/Caleb/16x32/tile007.png" type="Texture" id=2]
@@ -60,6 +60,9 @@
 [ext_resource path="res://assets/characters/Caleb/16x32/tile020.png" type="Texture" id=58]
 [ext_resource path="res://assets/characters/Caleb/16x32/tile015.png" type="Texture" id=59]
 [ext_resource path="res://assets/characters/Caleb/16x32/tile006.png" type="Texture" id=60]
+[ext_resource path="res://assets/characters/Caleb/16x16/tile042.png" type="Texture" id=61]
+[ext_resource path="res://assets/characters/Caleb/16x16/tile041.png" type="Texture" id=62]
+[ext_resource path="res://assets/characters/Caleb/16x16/tile040.png" type="Texture" id=63]
 
 [resource]
 animations = [ {
@@ -91,6 +94,11 @@ animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 22 ), ExtResource( 8 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "leftslash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 63 ), ExtResource( 62 ), ExtResource( 61 ), ExtResource( 62 ) ],
+"loop": true,
+"name": "leftwalk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 58 ), ExtResource( 4 ), ExtResource( 56 ), ExtResource( 5 ) ],

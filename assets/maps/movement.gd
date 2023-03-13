@@ -8,7 +8,6 @@ var rightmove = false
 var leftmove = false
 var downmove = false
 var lastmove = null
-var anifinished = $AnimatedSprite.connect("animation_finished", self, "get_input()")
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -48,12 +47,6 @@ func get_input():
 		anim.play("rightidle")
 	if Input.is_action_just_released("ui_left"):
 		anim.play("leftidle")
-	if Input.is_action_just_pressed("Interact"):
-		anim.play("leftslash")
-		anim.frames.set_animation_loop("leftslash", false)
-		func _on_AnimatedSprite_animation_finished():
-			if lastmove == 4:
-				anim.play("leftidle")
 	
 	
 	# Make sure diagonal movement isn't faster
@@ -66,5 +59,3 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 
-func _on_AnimatedSprite_animation_finished():
-	pass # Replace with function body.
