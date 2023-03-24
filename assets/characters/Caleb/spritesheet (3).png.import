@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spritesheet (3).png-173e6c58ac9f98d2c6e869fa88d701f1.stex"
+path="res://.import/spritesheet (3).png-d39d585082407b1f29a2ca40ca7f8dfc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/spritesheet (3).png"
-dest_files=[ "res://.import/spritesheet (3).png-173e6c58ac9f98d2c6e869fa88d701f1.stex" ]
+source_file="res://assets/characters/Caleb/spritesheet (3).png"
+dest_files=[ "res://.import/spritesheet (3).png-d39d585082407b1f29a2ca40ca7f8dfc.stex" ]
 
 [params]
 
