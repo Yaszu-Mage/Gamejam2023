@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test.png-c79a1e1fdd4269ec53e126e96173ec30.stex"
+path="res://.import/spritesheet.png-6dc06d25d496c34353859ed8cfb9cf5f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gut/unit/test.png"
-dest_files=[ "res://.import/test.png-c79a1e1fdd4269ec53e126e96173ec30.stex" ]
+source_file="res://assets/characters/Caleb/spritesheet.png"
+dest_files=[ "res://.import/spritesheet.png-6dc06d25d496c34353859ed8cfb9cf5f.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=false
+flags/repeat=0
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

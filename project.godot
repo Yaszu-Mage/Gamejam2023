@@ -176,7 +176,7 @@ config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/TileSetCutter/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gui]
 
