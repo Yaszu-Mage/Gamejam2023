@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Carry Idle-Sheet.png-d883470ffe805941fc7cde5b4e043a85.stex"
+path="res://.import/Carry Idle-Sheet.png-8cf374febb0e99f928eb33dde50b6677.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Odderf/Carry Idle-Sheet.png"
-dest_files=[ "res://.import/Carry Idle-Sheet.png-d883470ffe805941fc7cde5b4e043a85.stex" ]
+source_file="res://assets/characters/Caleb/Carry Idle-Sheet.png"
+dest_files=[ "res://.import/Carry Idle-Sheet.png-8cf374febb0e99f928eb33dde50b6677.stex" ]
 
 [params]
 
