@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var anim = $AnimationPlayer
-var speed = 200  # speed in pixels/sec
+var speed = 100  # speed in pixels/sec
 var velocity = Vector2.ZERO
 var upmove = false
 var rightmove = false
@@ -11,56 +11,55 @@ var lastmove = null
 var idle = false
 var animfinished = false
 var collide = false
-
-
+onready var start = $AnimationPlayer.play("downidle")
 
 func get_input():
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed('ui_right'):
 		velocity.x += 1
-		anim.play("idleright")
-		var rightmove = true
+		anim.play("rightwalk")
+		rightmove = true
 		lastmove = 1
 	else:
-		var rightmove = false
+		rightmove = false
 	if Input.is_action_pressed('ui_left'):
 		velocity.x -= 1
-		anim.play("idleleft")
-		var leftmove = true
+		anim.play("leftwalk")
+		leftmove = true
 		lastmove = 2
 	else:
-		var leftmove = false
+		leftmove = false
 	if Input.is_action_pressed('ui_down'):
 		velocity.y += 1
-		anim.play("idledown")
-		var downmove = true
+		anim.play("downwalk")
+		downmove = true
 		lastmove = 3
 	else:
-		var downmove = false
+		downmove = false
 	if Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
-		anim.play("idleup")
-		var upmove = true
+		anim.play("upwalk")
+		upmove = true
 		lastmove == 4
 	else:
-		var upmove = false
+		upmove = false
 	if Input.is_action_just_released("ui_up"):
-		anim.play("idleup")
+		anim.play("upidle")
 		idle = true
 	else:
 		idle = false
 	if Input.is_action_just_released("ui_down"):
-		anim.play("idledown")
+		anim.play("downidle")
 		idle = true
 	else:
 		idle = false
 	if Input.is_action_just_released("ui_right"):
-		anim.play("idleright")
+		anim.play("rightidle")
 		idle = true
 	else:
 		idle = false
 	if Input.is_action_just_released("ui_left"):
-		anim.play("idleleft")
+		anim.play("leftidle")
 		idle = true
 	else:
 		idle = false
@@ -80,13 +79,13 @@ func intanim():
 		if animfinished == true:
 			anim.stop()
 			if lastmove == 1:
-				anim.play("idleleft")
+				anim.play("yawn")
 			if lastmove == 3:
-				anim.play("idleup")
+				anim.play("yawn")
 			if lastmove == 2:
-				anim.play("idleright")
+				anim.play("yawn")
 			if lastmove == 4:
-				anim.play("idledown")
+				anim.play("yawn")
 
 	
 		
