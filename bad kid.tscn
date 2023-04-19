@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/characters/spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Sprite.gd" type="Script" id=2]
+[ext_resource path="res://awhhahahahah.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 140, 142 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 223.517
+
+[node name="boo" type="Sprite"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 58, 106 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
+position = Vector2( 2, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -4 )
+shape = SubResource( 2 )
+script = ExtResource( 3 )

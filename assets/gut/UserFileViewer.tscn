@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://addons/gut/UserFileViewer.gd" type="Script" id=1]
+[ext_resource path="res://assets/gut/UserFileViewer.gd" type="Script" id=1]
 
 [node name="UserFileViewer" type="WindowDialog"]
 margin_top = 20.0
