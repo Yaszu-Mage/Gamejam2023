@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/TileSetCutter/tilesetcutter.gd" type="Script" id=1]
+[ext_resource path="res://assets/tilemaps/images/RVTerrain.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileSetCutter" type="Node2D" parent="."]
+script = ExtResource( 1 )
+TextureToCut = ExtResource( 2 )
+
+[node name="5" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 80, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 80, 0, 16, 16 )
+
+[node name="6" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 96, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 0, 16, 16 )
+
+[node name="7" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 112, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 112, 0, 16, 16 )
+
+[node name="8" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 16, 16 )
+
+[node name="29" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 80, 16 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 80, 16, 16, 16 )
+
+[node name="30" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 96, 16 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 16, 16, 16 )
+
+[node name="31" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 112, 16 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 112, 16, 16, 16 )
+
+[node name="32" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 128, 16 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 16, 16, 16 )
+
+[node name="58" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 80, 32 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 80, 32, 16, 16 )
+
+[node name="60" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 96, 32 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 96, 32, 16, 16 )
+
+[node name="62" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 112, 32 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 112, 32, 16, 16 )
+
+[node name="64" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 128, 32 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 32, 16, 16 )
+
+[node name="93" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 112, 48 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 112, 48, 16, 16 )
+
+[node name="124" type="Sprite" parent="TileSetCutter"]
+position = Vector2( 112, 64 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 112, 64, 16, 16 )
