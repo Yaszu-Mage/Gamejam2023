@@ -5,7 +5,7 @@ var set_plain = {"oakstump" : 5, "w" : 1000, "ministump" : 5, "berries" : 5,}
 
 func _ready():
 	randomize()
-	make_chunk(100,100, set_plain)
+	make_chunk(16,16, set_plain)
 
 
 

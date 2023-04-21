@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var anim = $AnimationPlayer
-var speed = 100  # speed in pixels/sec
+var speed = 900  # speed in pixels/sec
 var velocity = Vector2.ZERO
 var upmove = false
 var rightmove = false
