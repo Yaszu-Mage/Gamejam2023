@@ -19,7 +19,7 @@ func _ready():
 
 func _on_Start_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://assets/maps/world2.tscn") 
+	get_tree().change_scene("res://assets/maps/move.tscn")
 
 
 func _on_Options_pressed():

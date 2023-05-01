@@ -9,6 +9,7 @@ func _ready():
 
 
 
+#use Comments please!
 func make_chunk(width:int, height:int, set:Dictionary) -> void:
 	for i in width:
 		for j in height:

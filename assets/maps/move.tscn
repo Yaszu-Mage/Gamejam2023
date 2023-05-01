@@ -1,8 +1,10 @@
-[gd_scene load_steps=128 format=2]
+[gd_scene load_steps=132 format=2]
 
 [ext_resource path="res://assets/tilemaps/THETREES.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/maps/movement.gd" type="Script" id=2]
 [ext_resource path="res://assets/maps/trees.gd" type="Script" id=3]
+[ext_resource path="res://assets/characters/Caleb/16x16/tile000.png" type="Texture" id=4]
+[ext_resource path="res://assets/maps/KinematicBody2D2.gd" type="Script" id=5]
 [ext_resource path="res://assets/tilemaps/fullgrass.tres" type="TileSet" id=10]
 [ext_resource path="res://assets/maps/proceed.gd" type="Script" id=11]
 [ext_resource path="res://assets/tilemaps/nature.tres" type="TileSet" id=12]
@@ -35,7 +37,7 @@
 [ext_resource path="res://assets/characters/Odderf/Fishing-Reeling-Sheet.png" type="Texture" id=40]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 7.5 )
+extents = Vector2( 2.5, 4.5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Hoeup"
@@ -4858,18 +4860,25 @@ tracks/3/keys = {
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
 
+[sub_resource type="CircleShape2D" id=96]
+radius = 89.2861
+
+[sub_resource type="CapsuleShape2D" id=97]
+radius = 5.0
+height = 0.0
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 11 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="Player" type="KinematicBody2D" parent="."]
 collision/safe_margin = 0.001
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 0, 8.5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0, 6.5 )
 shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 anims/Hoeup = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 anims/carrywalkdown = SubResource( 4 )
@@ -4964,17 +4973,17 @@ anims/wateringcanright = SubResource( 92 )
 anims/wateringcanup = SubResource( 93 )
 anims/yawn = SubResource( 94 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 0, -0.5 )
+[node name="Sprite" type="Sprite" parent="Player"]
 scale = Vector2( 1, 0.96875 )
 texture = ExtResource( 39 )
 offset = Vector2( 0, 9 )
 hframes = 6
 
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D/Sprite"]
-position = Vector2( 0, 0.516129 )
+[node name="Camera2D" type="Camera2D" parent="Player/Sprite"]
+position = Vector2( 0, -6.19355 )
 scale = Vector2( 1, 1.03226 )
 current = true
+zoom = Vector2( 0.2, 0.2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -4994,3 +5003,28 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 script = ExtResource( 3 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D2"]
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D2"]
+position = Vector2( -163, 11 )
+scale = Vector2( 0.65625, 0.46875 )
+texture = ExtResource( 4 )
+
+[node name="body" type="Area2D" parent="KinematicBody2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2/body"]
+position = Vector2( -163, 12 )
+shape = SubResource( 96 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
+position = Vector2( -163, 12 )
+shape = SubResource( 97 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="KinematicBody2D2/body" to="KinematicBody2D2" method="_on_body_body_entered"]
+[connection signal="body_exited" from="KinematicBody2D2/body" to="KinematicBody2D2" method="_on_body_body_exited"]
