@@ -1,0 +1,6 @@
+res://assets/maps/player.tscn
+res://assets/maps/CharacterBody2D.gd
+res://assets/scenes/mainmenu.tscn
+res://assets/maps/World.tscn
+res://assets/scenes/Player.tscn
+res://assets/tilemaps/fulldesmond.tres

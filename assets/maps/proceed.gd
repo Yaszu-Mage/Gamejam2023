@@ -2,10 +2,7 @@ extends Node2D
 onready var tilemap = $TileMap
 onready var bush = $TileMap2
 onready var trees = $TileMap3
-#Ghost was here
-#FUCK YOUUUUUUUUUUUUUUUUUUUUUUUUU
-#I know this shit because of modding on steam
-#Biome Documentation
+
 #Biome tilemaps/variables
 # 18 Ice Tiles/ 14 Spruce Tiles / 14 Plains Tiles / 6 fire tiles / 7 desert tiles
 #hey uh
@@ -13,7 +10,6 @@ onready var trees = $TileMap3
 #buddy, the ice is missing a few. ik you need to add them follow the same pattern also dont delete the comments we mush leave our self in historyyyyyyyyyyyyyyyyyyyyy ikr im so good at this
 #you aint doing to well at that.
 #imma try and figure out some meth shit
-#  also ballls babahhahahahahahahashshsshshshshahahahaahahahahahhahahahhahahahaahahahaahahahhahahahaahhaahahahahahahahahahahahahahahhahahahahahahahahaahahahahahhaahahahahahahaahahahahaahahahahaha
 #very: mature
 var set_desert = {"desert" : 5, "desert2" : 5, "desert3" : 5, "desert4" : 5, "desert5" : 5, "desert6" : 5}
 var set_plain = {"plains" : 85, "plains2" : 5, "plains3" : 85, "plains4" : 5, "plains5" : 5, "plains6" : 5, "plains7" : 5, "plains8" : 5, "plains9" : 5, "plains10" : 5, "plains11" : 5, "plains12" : 5, "plains13" : 5,}

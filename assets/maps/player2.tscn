@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4m6s8q5tnw36"]
+
+[ext_resource type="Script" path="res://assets/maps/CharacterBody2D.gd" id="1_cjx22"]
+[ext_resource type="AnimationLibrary" uid="uid://ctgfudj4t4dpl" path="res://assets/characters/Odderf/odderf.res" id="2_o8t5t"]
+[ext_resource type="Texture2D" uid="uid://d1sps5f5f47jy" path="res://assets/characters/Odderf/Hoe-Sheet.png" id="3_2vi7l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycjwo"]
+size = Vector2(13, 14)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_cjx22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_ycjwo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"odderf": ExtResource("2_o8t5t")
+}
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.96875)
+texture = ExtResource("3_2vi7l")
+offset = Vector2(0, 2)
+hframes = 18
+vframes = 4
+frame = 1
+
+[node name="Camera2D" type="Camera2D" parent="Sprite"]
+zoom = Vector2(5, 5)
+
+[node name="Control" type="Control" parent="Sprite/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Sprite/Camera2D/Control"]
+visible = false
+layout_mode = 0
+offset_left = -115.0
+offset_top = 55.7419
+offset_right = 203.0
+offset_bottom = 82.7419
+scale = Vector2(0.4, 0.4)
+value = 100.0
+show_percentage = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite"]
+emitting = false
+amount = 100
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(100, 100)
+orbit_velocity_max = 1000.0
