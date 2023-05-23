@@ -5,7 +5,7 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68b22"]
 resource_name = "Jungle1"
 texture = ExtResource("1")
-margins = Vector2i(298, 145)
+margins = Vector2i(298, 146)
 0:0/next_alternative_id = 8
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -3143,7 +3143,6 @@ margins = Vector2i(447, 183)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7126"]
 texture = ExtResource("1")
-margins = Vector2i(253, 158)
 texture_region_size = Vector2i(1, 1)
 0:0/next_alternative_id = 8
 0:0/0 = 0
