@@ -1,11 +1,10 @@
-res://enemy.tscn
+res://assets/maps/player2.tscn
 res://assets/tilemaps/fulldesmond.tres
-res://enemy.gd
+res://assets/maps/menuhelp.gd
 res://assets/scenes/mainmenu.tscn
 res://assets/maps/player.tscn
 res://assets/tilemaps/helpme.tscn
-res://assets/maps/player2.tscn
 res://multi.tscn
 res://main.tscn
 res://assets/maps/World.tscn
-res://assets/maps/player2.gd
+res://enemy.tscn

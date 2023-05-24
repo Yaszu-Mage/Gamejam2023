@@ -1,3 +1,8 @@
+ColorPicker
+ColorPickerButton
+ColorRect
+HBoxContainer
+Control
 MultiplayerSynchronizer
 ProgressBar
 Timer
@@ -12,11 +17,8 @@ Label
 LineEdit
 Button
 VBoxContainer
-HBoxContainer
-Control
 Node
 AnimatedSprite2D
 TileMap
 CPUParticles2D
-ColorRect
 Camera2D

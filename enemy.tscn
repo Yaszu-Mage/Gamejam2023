@@ -63,6 +63,6 @@ replication_config = SubResource("SceneReplicationConfig_ueaca")
 [node name="MultiplayerSynchronizer2" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_5n4b7")
 
-[connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_entered" from="detect" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_exited" from="detect" to="." method="_on_detect_body_exited"]
