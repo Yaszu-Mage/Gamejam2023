@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/tilemaps/images/RVNature.png" type="Texture" id=1]
 [ext_resource path="res://addons/TileSetCutter/tilesetcutter.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6, 5.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 24 )
@@ -57,11 +60,23 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 112, 0, 16, 16 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="oakstump"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oakstump/StaticBody2D"]
+position = Vector2( 0, -1.5 )
+shape = SubResource( 2 )
+
 [node name="sprucestump" type="Sprite" parent="."]
 position = Vector2( 128, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sprucestump"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprucestump/StaticBody2D"]
+position = Vector2( 0, -1.5 )
+shape = SubResource( 2 )
 
 [node name="oakleaf" type="Sprite" parent="."]
 position = Vector2( 192, 0 )
@@ -76,10 +91,16 @@ region_enabled = true
 region_rect = Rect2( 208, 0, 16, 16 )
 
 [node name="stone1" type="Sprite" parent="."]
-position = Vector2( 224, 0 )
+position = Vector2( -68, -86 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 224, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stone1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stone1/StaticBody2D"]
+position = Vector2( 0, -1.5 )
+shape = SubResource( 2 )
 
 [node name="stone2" type="Sprite" parent="."]
 position = Vector2( 240, 0 )
@@ -129,23 +150,29 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 96, 16, 16, 16 )
 
-[node name="24" type="Sprite" parent="."]
-position = Vector2( 128, 16 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 128, 16, 16, 16 )
-
 [node name="potplant" type="Sprite" parent="."]
-position = Vector2( 192, 16 )
+position = Vector2( 1, -4 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 192, 16, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="potplant"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="potplant/StaticBody2D"]
+position = Vector2( 0, -1.5 )
+shape = SubResource( 2 )
 
 [node name="potplant2" type="Sprite" parent="."]
 position = Vector2( 208, 16 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 208, 16, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="potplant2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="potplant2/StaticBody2D"]
+position = Vector2( 0, -1.5 )
+shape = SubResource( 2 )
 
 [node name="rocks2" type="Sprite" parent="."]
 position = Vector2( 224, 16 )
@@ -207,11 +234,23 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 112, 32, 16, 16 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="stump"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stump/StaticBody2D"]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
 [node name="stumpaxe" type="Sprite" parent="."]
 position = Vector2( 128, 32 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 128, 32, 16, 16 )
+region_rect = Rect2( 128, 24.9602, 16, 23.0398 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stumpaxe"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stumpaxe/StaticBody2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
 
 [node name="52" type="Sprite" parent="."]
 position = Vector2( 160, 32 )
@@ -291,11 +330,23 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 112, 48, 16, 16 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="log"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="log/StaticBody2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
+
 [node name="logs" type="Sprite" parent="."]
 position = Vector2( 128, 48 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 48, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="logs"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="logs/StaticBody2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
 
 [node name="75" type="Sprite" parent="."]
 position = Vector2( 144, 48 )
@@ -321,11 +372,23 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 192, 48, 16, 16 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="grapebush"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grapebush/StaticBody2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
+
 [node name="orangeflower" type="Sprite" parent="."]
 position = Vector2( 208, 48 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 208, 48, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="orangeflower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="orangeflower/StaticBody2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
 
 [node name="rocks6" type="Sprite" parent="."]
 position = Vector2( 224, 48 )
@@ -662,6 +725,11 @@ position = Vector2( 144, 112 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 144, 112, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ministump"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ministump/StaticBody2D"]
+shape = SubResource( 2 )
 
 [node name="log3" type="Sprite" parent="."]
 position = Vector2( 160, 112 )

@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=2 format=2]
+[gd_resource type="TileSet" load_steps=3 format=2]
 
 [ext_resource path="res://assets/tilemaps/images/RVNature.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6, 5.5 )
 
 [resource]
 0/name = "0"
@@ -4141,11 +4144,18 @@
 295/tile_mode = 0
 295/occluder_offset = Vector2( 8, 8 )
 295/navigation_offset = Vector2( 8, 8 )
-295/shape_offset = Vector2( 0, 0 )
-295/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+295/shape_offset = Vector2( 8, 6.5 )
+295/shape_transform = Transform2D( 1, 0, 0, 1, 8, 6.5 )
+295/shape = SubResource( 2 )
 295/shape_one_way = false
-295/shape_one_way_margin = 0.0
-295/shapes = [  ]
+295/shape_one_way_margin = 1.0
+295/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 6.5 )
+} ]
 295/z_index = 0
 296/name = "sprucestump"
 296/texture = ExtResource( 1 )
@@ -4155,11 +4165,18 @@
 296/tile_mode = 0
 296/occluder_offset = Vector2( 8, 8 )
 296/navigation_offset = Vector2( 8, 8 )
-296/shape_offset = Vector2( 0, 0 )
-296/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+296/shape_offset = Vector2( 8, 6.5 )
+296/shape_transform = Transform2D( 1, 0, 0, 1, 8, 6.5 )
+296/shape = SubResource( 2 )
 296/shape_one_way = false
-296/shape_one_way_margin = 0.0
-296/shapes = [  ]
+296/shape_one_way_margin = 1.0
+296/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 6.5 )
+} ]
 296/z_index = 0
 297/name = "oakleaf"
 297/texture = ExtResource( 1 )
@@ -4197,11 +4214,18 @@
 299/tile_mode = 0
 299/occluder_offset = Vector2( 8, 8 )
 299/navigation_offset = Vector2( 8, 8 )
-299/shape_offset = Vector2( 0, 0 )
-299/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+299/shape_offset = Vector2( 8, 6.5 )
+299/shape_transform = Transform2D( 1, 0, 0, 1, 8, 6.5 )
+299/shape = SubResource( 2 )
 299/shape_one_way = false
-299/shape_one_way_margin = 0.0
-299/shapes = [  ]
+299/shape_one_way_margin = 1.0
+299/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 6.5 )
+} ]
 299/z_index = 0
 300/name = "stone2"
 300/texture = ExtResource( 1 )
@@ -4239,11 +4263,18 @@
 302/tile_mode = 0
 302/occluder_offset = Vector2( 8, 8 )
 302/navigation_offset = Vector2( 8, 8 )
-302/shape_offset = Vector2( 0, 0 )
-302/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+302/shape_offset = Vector2( 8, 6.5 )
+302/shape_transform = Transform2D( 1, 0, 0, 1, 8, 6.5 )
+302/shape = SubResource( 2 )
 302/shape_one_way = false
-302/shape_one_way_margin = 0.0
-302/shapes = [  ]
+302/shape_one_way_margin = 1.0
+302/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 6.5 )
+} ]
 302/z_index = 0
 303/name = "potplant2"
 303/texture = ExtResource( 1 )
@@ -4253,11 +4284,18 @@
 303/tile_mode = 0
 303/occluder_offset = Vector2( 8, 8 )
 303/navigation_offset = Vector2( 8, 8 )
-303/shape_offset = Vector2( 0, 0 )
-303/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+303/shape_offset = Vector2( 8, 6.5 )
+303/shape_transform = Transform2D( 1, 0, 0, 1, 8, 6.5 )
+303/shape = SubResource( 2 )
 303/shape_one_way = false
-303/shape_one_way_margin = 0.0
-303/shapes = [  ]
+303/shape_one_way_margin = 1.0
+303/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 6.5 )
+} ]
 303/z_index = 0
 304/name = "rocks2"
 304/texture = ExtResource( 1 )
@@ -4309,25 +4347,39 @@
 307/tile_mode = 0
 307/occluder_offset = Vector2( 8, 8 )
 307/navigation_offset = Vector2( 8, 8 )
-307/shape_offset = Vector2( 0, 0 )
-307/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+307/shape_offset = Vector2( 8, 9 )
+307/shape_transform = Transform2D( 1, 0, 0, 1, 8, 9 )
+307/shape = SubResource( 2 )
 307/shape_one_way = false
-307/shape_one_way_margin = 0.0
-307/shapes = [  ]
+307/shape_one_way_margin = 1.0
+307/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 9 )
+} ]
 307/z_index = 0
 308/name = "stumpaxe"
 308/texture = ExtResource( 1 )
 308/tex_offset = Vector2( 0, 0 )
 308/modulate = Color( 1, 1, 1, 1 )
-308/region = Rect2( 128, 32, 16, 16 )
+308/region = Rect2( 128, 24, 16, 23 )
 308/tile_mode = 0
-308/occluder_offset = Vector2( 8, 8 )
-308/navigation_offset = Vector2( 8, 8 )
-308/shape_offset = Vector2( 0, 0 )
-308/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+308/occluder_offset = Vector2( 8, 11.5199 )
+308/navigation_offset = Vector2( 8, 11.5199 )
+308/shape_offset = Vector2( 8, 15.5199 )
+308/shape_transform = Transform2D( 1, 0, 0, 1, 8, 15.5199 )
+308/shape = SubResource( 2 )
 308/shape_one_way = false
-308/shape_one_way_margin = 0.0
-308/shapes = [  ]
+308/shape_one_way_margin = 1.0
+308/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 15.5199 )
+} ]
 308/z_index = 0
 309/name = "spro"
 309/texture = ExtResource( 1 )
@@ -4407,11 +4459,18 @@
 314/tile_mode = 0
 314/occluder_offset = Vector2( 8, 8 )
 314/navigation_offset = Vector2( 8, 8 )
-314/shape_offset = Vector2( 0, 0 )
-314/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+314/shape_offset = Vector2( 8, 12 )
+314/shape_transform = Transform2D( 1, 0, 0, 1, 8, 12 )
+314/shape = SubResource( 2 )
 314/shape_one_way = false
-314/shape_one_way_margin = 0.0
-314/shapes = [  ]
+314/shape_one_way_margin = 1.0
+314/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 12 )
+} ]
 314/z_index = 0
 315/name = "logs"
 315/texture = ExtResource( 1 )
@@ -4421,11 +4480,18 @@
 315/tile_mode = 0
 315/occluder_offset = Vector2( 8, 8 )
 315/navigation_offset = Vector2( 8, 8 )
-315/shape_offset = Vector2( 0, 0 )
-315/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+315/shape_offset = Vector2( 8, 12 )
+315/shape_transform = Transform2D( 1, 0, 0, 1, 8, 12 )
+315/shape = SubResource( 2 )
 315/shape_one_way = false
-315/shape_one_way_margin = 0.0
-315/shapes = [  ]
+315/shape_one_way_margin = 1.0
+315/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 12 )
+} ]
 315/z_index = 0
 316/name = "grapebush"
 316/texture = ExtResource( 1 )
@@ -4435,11 +4501,18 @@
 316/tile_mode = 0
 316/occluder_offset = Vector2( 8, 8 )
 316/navigation_offset = Vector2( 8, 8 )
-316/shape_offset = Vector2( 0, 0 )
-316/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+316/shape_offset = Vector2( 8, 12 )
+316/shape_transform = Transform2D( 1, 0, 0, 1, 8, 12 )
+316/shape = SubResource( 2 )
 316/shape_one_way = false
-316/shape_one_way_margin = 0.0
-316/shapes = [  ]
+316/shape_one_way_margin = 1.0
+316/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 12 )
+} ]
 316/z_index = 0
 317/name = "orangeflower"
 317/texture = ExtResource( 1 )
@@ -4449,11 +4522,18 @@
 317/tile_mode = 0
 317/occluder_offset = Vector2( 8, 8 )
 317/navigation_offset = Vector2( 8, 8 )
-317/shape_offset = Vector2( 0, 0 )
-317/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+317/shape_offset = Vector2( 8, 12 )
+317/shape_transform = Transform2D( 1, 0, 0, 1, 8, 12 )
+317/shape = SubResource( 2 )
 317/shape_one_way = false
-317/shape_one_way_margin = 0.0
-317/shapes = [  ]
+317/shape_one_way_margin = 1.0
+317/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 12 )
+} ]
 317/z_index = 0
 318/name = "rocks6"
 318/texture = ExtResource( 1 )
@@ -5009,11 +5089,18 @@
 357/tile_mode = 0
 357/occluder_offset = Vector2( 8, 8 )
 357/navigation_offset = Vector2( 8, 8 )
-357/shape_offset = Vector2( 0, 0 )
-357/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+357/shape_offset = Vector2( 8, 8 )
+357/shape_transform = Transform2D( 1, 0, 0, 1, 8, 8 )
+357/shape = SubResource( 2 )
 357/shape_one_way = false
-357/shape_one_way_margin = 0.0
-357/shapes = [  ]
+357/shape_one_way_margin = 1.0
+357/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
 357/z_index = 0
 358/name = "log3"
 358/texture = ExtResource( 1 )

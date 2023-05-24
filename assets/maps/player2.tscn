@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://c4m6s8q5tnw36"]
+
+[ext_resource type="Script" path="res://assets/maps/player2.gd" id="1_7huxb"]
+[ext_resource type="AnimationLibrary" uid="uid://ctgfudj4t4dpl" path="res://assets/characters/Odderf/odderf.res" id="2_o8t5t"]
+[ext_resource type="Texture2D" uid="uid://b4fck46c314qc" path="res://assets/characters/Odderf/Damage-Sheet.png" id="3_r1p6r"]
+[ext_resource type="Script" path="res://assets/maps/Label.gd" id="4_ebso2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycjwo"]
+size = Vector2(8, 6)
+
+[sub_resource type="Animation" id="Animation_ajfsy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ey4io"]
+_data = {
+"RESET": SubResource("Animation_ajfsy")
+}
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_jxyd1"]
+properties/0/path = NodePath(".:current_animation")
+properties/0/spawn = true
+properties/0/sync = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_llefm"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ds2ne"]
+properties/0/path = NodePath("../ProgressBar2:value")
+properties/0/spawn = true
+properties/0/sync = true
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("1_7huxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ycjwo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ey4io"),
+"odderf": ExtResource("2_o8t5t")
+}
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.96875)
+texture = ExtResource("3_r1p6r")
+hframes = 8
+vframes = 4
+frame = 1
+
+[node name="Camera2D" type="Camera2D" parent="Sprite"]
+zoom = Vector2(5, 5)
+limit_smoothed = true
+
+[node name="Control" type="Control" parent="Sprite/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Sprite/Camera2D/Control"]
+visible = false
+layout_mode = 0
+offset_left = -115.0
+offset_top = 55.7419
+offset_right = 203.0
+offset_bottom = 82.7419
+scale = Vector2(0.4, 0.4)
+value = 100.0
+show_percentage = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite"]
+emitting = false
+amount = 100
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(100, 100)
+orbit_velocity_max = 1000.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+process_mode = 3
+root_path = NodePath("../AnimationPlayer")
+replication_config = SubResource("SceneReplicationConfig_jxyd1")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("4_ebso2")
+
+[node name="player_hitbox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+shape = SubResource("CircleShape2D_llefm")
+
+[node name="atkcool" type="Timer" parent="."]
+
+[node name="death" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0
+value = 100.0
+
+[node name="MultiplayerSynchronizer2" type="MultiplayerSynchronizer" parent="."]
+root_path = NodePath("../MultiplayerSynchronizer")
+replication_config = SubResource("SceneReplicationConfig_ds2ne")
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="atkcool" to="." method="_on_atkcool_timeout"]
+[connection signal="timeout" from="death" to="." method="_on_death_timeout"]

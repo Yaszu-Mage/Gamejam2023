@@ -1,6 +1,7 @@
 # put script and sh|t here
 extends Control
-
+var mainscene = preload("res://assets/maps/World.tscn").instantiate()
+var  options = preload("res://assets/scenes/options.tscn").instantiate()
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,13 +19,15 @@ func _ready():
 
 
 func _on_Start_pressed():
-# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://assets/maps/world2.tscn") 
+	get_tree().get_root().add_child(mainscene)
+	
 
 
 func _on_Options_pressed():
 	var options = load("res://assets/scenes/options.tscn").instance()
 	get_tree().change_scene("res://assets/scenes/options.tscn")
+
+
 
 
 func _on_Quit_pressed():

@@ -5,10 +5,11 @@ var set_plain = {"oakstump" : 5, "w" : 1000, "ministump" : 5, "berries" : 5,}
 
 func _ready():
 	randomize()
-	make_chunk(100,100, set_plain)
+	make_chunk(16,16, set_plain)
 
 
 
+#use Comments please!
 func make_chunk(width:int, height:int, set:Dictionary) -> void:
 	for i in width:
 		for j in height:

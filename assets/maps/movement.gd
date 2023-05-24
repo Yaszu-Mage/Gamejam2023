@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var anim = $AnimationPlayer
+onready var timer = $Timer
 var speed = 100  # speed in pixels/sec
 var velocity = Vector2.ZERO
 var upmove = false
@@ -12,9 +13,12 @@ var idle = false
 var animfinished = false
 var collide = false
 onready var start = $AnimationPlayer.play("downidle")
+var dash = false
 
 func get_input():
 	velocity = Vector2.ZERO
+	if Input.is_action_pressed("Dash"):
+		dash = true
 	if Input.is_action_pressed('ui_right'):
 		velocity.x += 1
 		anim.play("rightwalk")
@@ -67,13 +71,13 @@ func get_input():
 func interact():
 		if Input.is_action_just_pressed("Interact"):
 			if lastmove == 1:
-				anim.play("leftint")
+				anim.play("rightatk")
 			if lastmove == 3:
-				anim.play("upint")
+				anim.play("downattack")
 			if lastmove == 2:
-				anim.play("rightint")
+				anim.play("leftatk")
 			if lastmove == 4:
-				anim.play("downint")
+				anim.play("upattack")
 
 func intanim():
 		if animfinished == true:
@@ -102,3 +106,5 @@ func _physics_process(delta):
 func _on_AnimationPlayer_animation_finished(upint):
 	animfinished = true
 	animfinished = false
+
+

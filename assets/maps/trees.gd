@@ -5,7 +5,7 @@ var set_plain = {"Sprite" : 5, "w" : 285, "Sprite2" : 5,}
 
 func _ready():
 	randomize()
-	make_chunk(100,100, set_plain)
+	make_chunk(16,16, set_plain)
 
 
 
