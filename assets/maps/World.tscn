@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhxqsl54fcvil"]
+[gd_scene load_steps=11 format=3 uid="uid://dhxqsl54fcvil"]
 
 [ext_resource type="Script" path="res://multi.gd" id="1_2q2j6"]
 [ext_resource type="Texture2D" uid="uid://0j4gaj0q1i5s" path="res://assets/tilemaps/desmond.png" id="1_a86yt"]
@@ -170,8 +170,12 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_xjl3y"]
+resource_name = "Blood"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ht8f8"]
 _data = {
+"Blood": SubResource("Animation_xjl3y"),
 "Day_Night": SubResource("Animation_hgr10"),
 "RESET": SubResource("Animation_6lqxm")
 }
@@ -197,6 +201,7 @@ script = ExtResource("3_6832a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate"]
 root_node = NodePath("../..")
+speed_scale = 0.01
 libraries = {
 "": SubResource("AnimationLibrary_ht8f8")
 }
@@ -248,6 +253,7 @@ horizontal_alignment = 1
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_anmc4")]
 position = Vector2(-129, 11)
 
+[connection signal="animation_finished" from="CanvasModulate/AnimationPlayer" to="CanvasModulate" method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Menu/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Menu/Join" to="." method="_on_join_pressed"]
 [connection signal="text_changed" from="Menu/LineEdit" to="." method="_on_line_edit_text_changed"]
