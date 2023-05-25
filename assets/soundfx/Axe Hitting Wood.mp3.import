@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhlcoaxasn7ye"
+path="res://.godot/imported/Axe Hitting Wood.mp3-7bd8995251120f75549b902be1bb7a6b.mp3str"
+
+[deps]
+
+source_file="res://assets/soundfx/Axe Hitting Wood.mp3"
+dest_files=["res://.godot/imported/Axe Hitting Wood.mp3-7bd8995251120f75549b902be1bb7a6b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

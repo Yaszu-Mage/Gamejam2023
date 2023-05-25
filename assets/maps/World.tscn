@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhxqsl54fcvil"]
+[gd_scene load_steps=14 format=3 uid="uid://dhxqsl54fcvil"]
 
 [ext_resource type="Script" path="res://multi.gd" id="1_2q2j6"]
 [ext_resource type="Texture2D" uid="uid://0j4gaj0q1i5s" path="res://assets/tilemaps/desmond.png" id="1_a86yt"]
 [ext_resource type="Script" path="res://assets/maps/CanvasModulate.gd" id="3_6832a"]
 [ext_resource type="PackedScene" uid="uid://b5f37gn6pmfpb" path="res://enemy.tscn" id="4_anmc4"]
+[ext_resource type="AudioStream" uid="uid://b88tvbwlp0jqa" path="res://assets/soundfx/First Day.mp3" id="5_7idvq"]
+[ext_resource type="Script" path="res://assets/maps/music.gd" id="5_lvgsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_khc3c"]
 texture = ExtResource("1_a86yt")
@@ -139,6 +141,22 @@ texture = ExtResource("1_a86yt")
 [sub_resource type="TileSet" id="TileSet_y777b"]
 sources/2 = SubResource("TileSetAtlasSource_khc3c")
 
+[sub_resource type="Animation" id="Animation_xjl3y"]
+resource_name = "Blood"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 11.8, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0627451, 0, 0.423529, 1), Color(0.247059, 0, 0.0901961, 1), Color(0.25098, 0.0196078, 0.12549, 1), Color(0.0627451, 0, 0.423529, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_hgr10"]
 resource_name = "Day_Night"
 length = 24.0
@@ -170,15 +188,15 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_xjl3y"]
-resource_name = "Blood"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ht8f8"]
 _data = {
 "Blood": SubResource("Animation_xjl3y"),
 "Day_Night": SubResource("Animation_hgr10"),
 "RESET": SubResource("Animation_6lqxm")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u38t0"]
+size = Vector2(1243, 800)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2q2j6")
@@ -253,7 +271,18 @@ horizontal_alignment = 1
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_anmc4")]
 position = Vector2(-129, 11)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7idvq")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_lvgsr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7.5, 29)
+shape = SubResource("RectangleShape2D_u38t0")
+
 [connection signal="animation_finished" from="CanvasModulate/AnimationPlayer" to="CanvasModulate" method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Menu/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Menu/Join" to="." method="_on_join_pressed"]
 [connection signal="text_changed" from="Menu/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7pyac2l8fkk3"
+path="res://.godot/imported/fishing idle.mp3-1c6a9e330e5511bdfcd0482d2bd62618.mp3str"
+
+[deps]
+
+source_file="res://assets/soundfx/fishing idle.mp3"
+dest_files=["res://.godot/imported/fishing idle.mp3-1c6a9e330e5511bdfcd0482d2bd62618.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,20 +2,31 @@ extends CharacterBody2D
 var speed = 500
 var player_chase = false
 var player = null
-@onready var animation = $AnimationPlayer
+@onready var anim = $AnimationPlayer
 var look = null
 
 
 
 func _physics_process(delta):
 	if player_chase:
-		speed = 50
+		speed = 100
 		position += (player.position - position)/speed
 		global_position += (player.position - position)/speed
 		rpc("remote_set_position", global_position)
 
 func _on_detect_body_entered(body):
 	player = body
+	look_at(body)
+	if body.velocity.x <= 1:
+		anim.play("odderf/rightwalk")
+	elif body.velocity.x >= -1:
+		anim.play("odderf/leftwalk")
+	elif body.velocity.y <= 1:
+		anim.play("odderf/upwalk")
+	elif body.velocity.y >= -1:
+		anim.play("odderf/downwalk")
+	elif body.velocity.x and body.velocity.y == 0:
+		anim.play("odderf/yawn")
 	player_chase = true
 
 

@@ -1,3 +1,7 @@
+AudioListener2D
+CollisionShape2D
+Area2D
+AudioStreamPlayer
 ColorPicker
 ColorPickerButton
 ColorRect
@@ -6,8 +10,6 @@ Control
 MultiplayerSynchronizer
 ProgressBar
 Timer
-CollisionShape2D
-Area2D
 Sprite2D
 CanvasModulate
 AnimationPlayer

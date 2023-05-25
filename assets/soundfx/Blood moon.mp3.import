@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmgyg1n3ld3w4"
+path="res://.godot/imported/Blood moon.mp3-51c662fe912ae298c20fe5070c7607c6.mp3str"
+
+[deps]
+
+source_file="res://assets/soundfx/Blood moon.mp3"
+dest_files=["res://.godot/imported/Blood moon.mp3-51c662fe912ae298c20fe5070c7607c6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
