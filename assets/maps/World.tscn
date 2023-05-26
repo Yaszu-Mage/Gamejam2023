@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhxqsl54fcvil"]
+[gd_scene load_steps=16 format=3 uid="uid://dhxqsl54fcvil"]
 
 [ext_resource type="Script" path="res://multi.gd" id="1_2q2j6"]
 [ext_resource type="Texture2D" uid="uid://0j4gaj0q1i5s" path="res://assets/tilemaps/desmond.png" id="1_a86yt"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b5f37gn6pmfpb" path="res://enemy.tscn" id="4_anmc4"]
 [ext_resource type="AudioStream" uid="uid://b88tvbwlp0jqa" path="res://assets/soundfx/First Day.mp3" id="5_7idvq"]
 [ext_resource type="Script" path="res://assets/maps/music.gd" id="5_lvgsr"]
+[ext_resource type="AudioStream" uid="uid://cpmihtgx1lm52" path="res://assets/soundfx/Dark Chi.mp3" id="8_v7oja"]
+[ext_resource type="AudioStream" uid="uid://dmgyg1n3ld3w4" path="res://assets/soundfx/Blood moon.mp3" id="9_h14iw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_khc3c"]
 texture = ExtResource("1_a86yt")
@@ -151,7 +153,7 @@ tracks/0/path = NodePath("CanvasModulate:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 11.8, 12),
+"times": PackedFloat32Array(0, 0.5, 11.8, 12),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.0627451, 0, 0.423529, 1), Color(0.247059, 0, 0.0901961, 1), Color(0.25098, 0.0196078, 0.12549, 1), Color(0.0627451, 0, 0.423529, 1)]
@@ -219,12 +221,13 @@ script = ExtResource("3_6832a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate"]
 root_node = NodePath("../..")
-speed_scale = 0.01
 libraries = {
 "": SubResource("AnimationLibrary_ht8f8")
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
+light_mask = 2
+visibility_layer = 2
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -236,6 +239,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Host" type="Button" parent="Menu"]
+light_mask = 2
+visibility_layer = 2
 layout_mode = 2
 text = "Host"
 
@@ -258,6 +263,8 @@ grow_horizontal = 2
 
 [node name="NetworkSideDisplay" type="Label" parent="NetworkInfo"]
 visible = false
+light_mask = 2
+visibility_layer = 2
 layout_mode = 2
 text = "Network Side"
 horizontal_alignment = 1
@@ -271,9 +278,6 @@ horizontal_alignment = 1
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_anmc4")]
 position = Vector2(-129, 11)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_7idvq")
-
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("5_lvgsr")
 
@@ -281,8 +285,28 @@ script = ExtResource("5_lvgsr")
 position = Vector2(-7.5, 29)
 shape = SubResource("RectangleShape2D_u38t0")
 
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="FirstDay" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("5_7idvq")
+
+[node name="Darkchi" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("8_v7oja")
+
+[node name="mwa" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("9_h14iw")
+
 [connection signal="animation_finished" from="CanvasModulate/AnimationPlayer" to="CanvasModulate" method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Menu/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Menu/Host" to="CanvasModulate" method="_on_host_pressed"]
 [connection signal="pressed" from="Menu/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Menu/Join" to="CanvasModulate" method="_on_join_pressed"]
 [connection signal="text_changed" from="Menu/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="body_entered" from="Area2D" to="CanvasModulate" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Node2D/FirstDay" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="CanvasModulate" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Node2D/FirstDay" method="_on_area_2d_body_exited"]

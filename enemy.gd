@@ -16,7 +16,6 @@ func _physics_process(delta):
 
 func _on_detect_body_entered(body):
 	player = body
-	look_at(body)
 	if body.velocity.x <= 1:
 		anim.play("odderf/rightwalk")
 	elif body.velocity.x >= -1:
