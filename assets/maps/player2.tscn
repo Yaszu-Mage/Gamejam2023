@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4m6s8q5tnw36"]
+[gd_scene load_steps=14 format=3 uid="uid://c4m6s8q5tnw36"]
 
 [ext_resource type="Script" path="res://assets/maps/player2.gd" id="1_7huxb"]
 [ext_resource type="AnimationLibrary" uid="uid://ctgfudj4t4dpl" path="res://assets/characters/Odderf/odderf.res" id="2_o8t5t"]
 [ext_resource type="Texture2D" uid="uid://cka652tc7bp7j" path="res://assets/characters/Odderf/Idle-Sheet.png" id="3_6fj6s"]
 [ext_resource type="Script" path="res://assets/maps/Label.gd" id="4_ebso2"]
 [ext_resource type="Script" path="res://assets/maps/menuhelp.gd" id="4_vypy1"]
+[ext_resource type="Script" path="res://assets/maps/terraindetect.gd" id="6_1p4fq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycjwo"]
 size = Vector2(8, 6)
@@ -63,6 +64,9 @@ properties/0/path = NodePath("Sprite:self_modulate")
 properties/0/spawn = true
 properties/0/sync = true
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48fdw"]
+size = Vector2(14, 14)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 255
 collision_mask = 255
@@ -83,7 +87,7 @@ scale = Vector2(1, 0.96875)
 texture = ExtResource("3_6fj6s")
 hframes = 6
 vframes = 4
-frame = 13
+frame = 6
 
 [node name="Camera2D" type="Camera2D" parent="Sprite"]
 zoom = Vector2(5, 5)
@@ -158,8 +162,16 @@ value = 100.0
 [node name="MultiplayerSynchronizer2" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_ds2ne")
 
+[node name="terraindetect" type="Area2D" parent="."]
+script = ExtResource("6_1p4fq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="terraindetect"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_48fdw")
+
 [connection signal="color_changed" from="Sprite/Camera2D/HBoxContainer/ColorPicker" to="Sprite/Camera2D/HBoxContainer" method="_on_color_picker_color_changed"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="atkcool" to="." method="_on_atkcool_timeout"]
 [connection signal="timeout" from="death" to="." method="_on_death_timeout"]
+[connection signal="body_shape_entered" from="terraindetect" to="terraindetect" method="_on_body_shape_entered"]
