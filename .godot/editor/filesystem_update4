@@ -7,5 +7,10 @@ res://multi.tscn
 res://main.tscn
 res://assets/maps/World.tscn
 res://enemy.tscn
-res://assets/maps/terrain.gd
-res://assets/maps/terraindetect.gd
+res://assets/maps/CanvasModulate.gd
+res://assets/maps/player2.gd
+res://assets/maps/menuhelp.gd
+res://assets/characters/Odderf/odderf.res
+res://assets/maps/music.gd
+res://enemy.gd
+res://global.gd

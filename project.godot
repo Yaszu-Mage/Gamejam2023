@@ -17,6 +17,10 @@ run/low_processor_mode=true
 boot_splash/image="res://icon.png"
 config/icon="res://icoicoicoico.png"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray()

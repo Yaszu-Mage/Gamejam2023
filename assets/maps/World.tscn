@@ -496,10 +496,12 @@ layer_1/tile_data = PackedInt32Array(262137, 1048578, 11, 262138, 1179650, 9, 26
 script = ExtResource("3_wap0t")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 script = ExtResource("3_6832a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate"]
 root_node = NodePath("../..")
+speed_scale = 0.1
 libraries = {
 "": SubResource("AnimationLibrary_ht8f8")
 }
@@ -563,8 +565,6 @@ script = ExtResource("5_lvgsr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-7.5, 29)
 shape = SubResource("RectangleShape2D_u38t0")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
 

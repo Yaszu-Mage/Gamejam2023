@@ -1,8 +1,6 @@
 extends CanvasModulate
 @onready var ani = $AnimationPlayer
-@onready var first = $"../AudioStreamPlayer"
-@onready var blood = $"../AudioStreamPlayer2"
-@onready var mwhaha = $"../AudioStreamPlayer3"
+var blood = null
 var bloodmoon = true
 var bloodjust = false
 func _process(delta):
@@ -11,7 +9,7 @@ func _process(delta):
 func _ready():
 	time()
 	##ani.play("Day_Night")
-	##self.visible = false
+	self.visible = false
 
 
 func _on_animation_player_animation_finished(anim_name):

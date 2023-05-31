@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://debnitjqa5cbe"]
 
 [ext_resource type="Script" path="res://assets/scenes/start.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://bfsr27af6fk8t" path="res://assets/characters/Caleb/16x16/tile001.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/characters/Caleb/16x16/tile001.png" id="2"]
 [ext_resource type="TileSet" uid="uid://dq0h2rjatysr1" path="res://assets/tilemaps/fulldesmond.tres" id="3"]
 
 [sub_resource type="Environment" id="1"]

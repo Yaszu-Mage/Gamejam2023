@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4m6s8q5tnw36"]
+[gd_scene load_steps=17 format=3 uid="uid://c4m6s8q5tnw36"]
 
 [ext_resource type="Script" path="res://assets/maps/player2.gd" id="1_7huxb"]
 [ext_resource type="AnimationLibrary" uid="uid://ctgfudj4t4dpl" path="res://assets/characters/Odderf/odderf.res" id="2_o8t5t"]
@@ -52,10 +52,23 @@ _data = {
 "RESET": SubResource("Animation_ajfsy")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hmlm"]
+bg_color = Color(0.878431, 0.827451, 0.980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os5mv"]
+bg_color = Color(1, 0.329412, 0.376471, 1)
+
+[sub_resource type="Theme" id="Theme_1egj5"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_8hmlm")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_os5mv")
+
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_jxyd1"]
-properties/0/path = NodePath(".:current_animation")
+properties/0/path = NodePath("AnimationPlayer:current_animation")
 properties/0/spawn = true
 properties/0/sync = true
+properties/1/path = NodePath("Sprite:self_modulate")
+properties/1/spawn = true
+properties/1/sync = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_llefm"]
 
@@ -100,13 +113,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ProgressBar" type="ProgressBar" parent="Sprite/Camera2D/Control"]
-visible = false
 layout_mode = 0
-offset_left = -115.0
-offset_top = 55.7419
-offset_right = 203.0
-offset_bottom = 82.7419
+offset_left = -15.0
+offset_top = -12.3871
+offset_right = 58.0
+offset_bottom = -3.3871
 scale = Vector2(0.4, 0.4)
+theme = SubResource("Theme_1egj5")
 value = 100.0
 show_percentage = false
 
@@ -132,7 +145,6 @@ orbit_velocity_max = 1000.0
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 process_mode = 3
-root_path = NodePath("../AnimationPlayer")
 replication_config = SubResource("SceneReplicationConfig_jxyd1")
 
 [node name="Label" type="Label" parent="."]
@@ -161,6 +173,7 @@ value = 100.0
 
 [node name="MultiplayerSynchronizer2" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_ds2ne")
+public_visibility = false
 
 [node name="terraindetect" type="Area2D" parent="."]
 script = ExtResource("6_1p4fq")
@@ -169,9 +182,12 @@ script = ExtResource("6_1p4fq")
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_48fdw")
 
+[node name="atktimer" type="Timer" parent="."]
+
 [connection signal="color_changed" from="Sprite/Camera2D/HBoxContainer/ColorPicker" to="Sprite/Camera2D/HBoxContainer" method="_on_color_picker_color_changed"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="atkcool" to="." method="_on_atkcool_timeout"]
 [connection signal="timeout" from="death" to="." method="_on_death_timeout"]
 [connection signal="body_shape_entered" from="terraindetect" to="terraindetect" method="_on_body_shape_entered"]
+[connection signal="timeout" from="atktimer" to="." method="_on_atktimer_timeout"]
