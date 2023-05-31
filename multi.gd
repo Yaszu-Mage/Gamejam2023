@@ -33,6 +33,7 @@ func _on_join_pressed():
 	$NetworkInfo/UniquePeerID.text = str(multiplayer.get_unique_id())
 	add_previously_connected_player_characters(connected_peer_ids)
 
+
 func add_player_character(peer_id):
 	connected_peer_ids.append(peer_id)
 	var player_character = preload("res://assets/maps/player2.tscn").instantiate()

@@ -49,7 +49,6 @@ func _physics_process(delta):
 		
 		
 		
-		
 		enemy_atk()
 		var direction:Vector2 = Vector2.ZERO
 		var action = Input.get_axis("ui_left", "ui_right")

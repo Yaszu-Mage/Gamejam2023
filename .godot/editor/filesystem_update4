@@ -1,11 +1,7 @@
-res://enemy.tscn
-res://assets/tilemaps/fulldesmond.tres
-res://enemy.gd
-res://assets/maps/player.tscn
-res://assets/tilemaps/helpme.tscn
 res://assets/maps/player2.tscn
-res://multi.tscn
-res://main.tscn
+res://multi.gd
 res://assets/maps/World.tscn
-res://assets/scenes/mainmenu.tscn
-res://assets/characters/Odderf/odderf.res
+res://enemy.tscn
+res://assets/maps/player2.gd
+res://assets/maps/menuhelp.gd
+res://enemy.gd

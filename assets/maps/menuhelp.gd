@@ -1,7 +1,6 @@
 extends HBoxContainer
 @onready var invmenu = self
 var menvisible = false
-var color = null
 @onready var player = $"../.."
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,3 +25,8 @@ func _process(delta):
 
 func _on_color_picker_color_changed(color):
 	player.self_modulate = color
+	rpc("colorsync", color, player)
+	
+@rpc("unreliable")
+func colorsync(color, player):
+	$Sprite.self_modulate = color
