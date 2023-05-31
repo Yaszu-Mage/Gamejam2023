@@ -33,6 +33,7 @@ func _on_detect_body_entered(body):
 
 
 func _process(delta):
+	var healthbar = $ProgressBar
 	if alive == false:
 		player = null
 		player_chase = false
@@ -41,6 +42,7 @@ func _process(delta):
 	else:
 		$enemy_hitbox.monitoring = true
 		self.visible = true
+	healthbar.value = health
 
 func _on_detect_body_exited(body):
 	player = null
@@ -75,9 +77,12 @@ func _on_enemy_hitbox_body_exited(body):
 
 
 func deal_with_damage():
+	var healthbar = $ProgressBar
+	healthbar.value = health
 	if player_inattack and Global.player_current_attack == true:
 		if can_take_dmg:
 			health = health - 20
+			
 			print("slime health = ", health)
 			$dmgcool.start()
 			can_take_dmg = false
@@ -88,3 +93,4 @@ func deal_with_damage():
 
 func _on_dmgcool_timeout():
 	can_take_dmg = true
+

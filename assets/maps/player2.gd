@@ -97,6 +97,18 @@ func _physics_process(delta):
 		rpc("remote_set_position", global_position)
 		rpc("animationsync", currentanimation)
 		rpc("syncatk", attackip)
+		
+		var healthbar = $Sprite/Camera2D/Control/ProgressBar
+		
+		healthbar.value = health
+		
+		if health >= 100:
+			healthbar.visible = false
+		else:
+			healthbar.visible = true
+		
+		rpc("healthsync", health)
+		
 
 @rpc("unreliable")
 func remote_set_position(authority_position):
@@ -106,9 +118,16 @@ func remote_set_position(authority_position):
 func syncatk(attackip):
 	if attackip:
 		Global.player_current_attack = true
+		player_atk = true
 	else:
 		Global.player_current_attack = false
+		player_atk = false
 
+
+@rpc("unreliable")
+func healthsync(health):
+	var healthbar = $Sprite/Camera2D/Control/ProgressBar
+	healthbar.value = health
 
 @rpc("authority", "call_local", "reliable", 1)
 func display_message(message):
@@ -154,6 +173,7 @@ func enemy_atk():
 	elif player_range == true and enemy_cool == true and alive and player_atk:
 		print("dmg")
 		health = health - 20
+		attackip = true
 		enemy_cool = false
 		$atkcool.start()
 	
@@ -181,3 +201,12 @@ func _on_atktimer_timeout():
 	$atktimer.stop()
 	Global.player_current_attack = false
 	attackip = false
+
+
+func _on_regen_timeout():
+	if health < 100:
+		health = health + 20
+		if health > 100:
+			health = 100
+	if health <= 0:
+		health = 0
