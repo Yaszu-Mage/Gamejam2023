@@ -43,7 +43,6 @@ func _process(delta):
 		$enemy_hitbox.monitoring = true
 		self.visible = true
 	healthbar.value = health
-	rpc("healthsync", health)
 func _on_detect_body_exited(body):
 	player = null
 	player_chase = false
@@ -51,10 +50,6 @@ func _on_detect_body_exited(body):
 func enemy():
 	pass
 
-@rpc("unreliable")
-func healthsync(health):
-	var healthbar = $ProgressBar
-	healthbar.value = health
 @rpc("unreliable")
 func remote_set_position(authority_position):
 	global_position = authority_position

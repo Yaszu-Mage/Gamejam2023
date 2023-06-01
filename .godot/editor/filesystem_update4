@@ -1,7 +1,6 @@
-res://assets/maps/player2.tscn
-res://multi.gd
-res://assets/maps/World.tscn
 res://enemy.tscn
-res://assets/maps/player2.gd
-res://assets/maps/menuhelp.gd
 res://enemy.gd
+res://assets/maps/player2.tscn
+res://assets/maps/menuhelp.gd
+res://global.gd
+res://assets/maps/World.tscn

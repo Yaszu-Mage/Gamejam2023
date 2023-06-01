@@ -17,6 +17,10 @@ func _process(delta):
 			else:
 				invmenu.visible = true
 				menvisible = true
+		var player = $"../.."
+		if Global.color_sub:
+			var color = player.self_modulate
+			rpc("colorsync", color)
 
 
 
@@ -25,8 +29,10 @@ func _process(delta):
 
 func _on_color_picker_color_changed(color):
 	player.self_modulate = color
-	rpc("colorsync", color, player)
+	Global.color_sub = true
+	if Global.color_sub:
+		rpc("colorsync", color,player)
 	
 @rpc("unreliable")
-func colorsync(color, player):
-	$Sprite.self_modulate = color
+func colorsync(color):
+	$"../..".self_modulate = color
