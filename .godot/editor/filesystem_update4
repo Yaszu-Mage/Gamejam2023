@@ -4,3 +4,8 @@ res://assets/maps/player2.tscn
 res://assets/maps/menuhelp.gd
 res://global.gd
 res://assets/maps/World.tscn
+res://assets/maps/player2.gd
+res://assets/characters/Odderf/odderf.res
+res://assets/entities/plainstree.tscn
+res://assets/entities/plainstree.gd
+res://assets/items/wood.tscn

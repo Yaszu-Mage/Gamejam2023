@@ -31,7 +31,7 @@ func _on_color_picker_color_changed(color):
 	player.self_modulate = color
 	Global.color_sub = true
 	if Global.color_sub:
-		rpc("colorsync", color,player)
+		rpc("colorsync", color)
 	
 @rpc("unreliable")
 func colorsync(color):

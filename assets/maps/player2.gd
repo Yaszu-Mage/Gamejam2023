@@ -95,7 +95,7 @@ func _physics_process(delta):
 		global_position += direction.normalized()
 		rpc("remote_set_position", global_position)
 		rpc("animationsync", currentanimation)
-		rpc("syncatk", attackip)
+		rpc("syncatk", attackip, player_atk)
 		
 		var healthbar = $Sprite/Camera2D/Control/ProgressBar
 		
@@ -114,7 +114,7 @@ func remote_set_position(authority_position):
 	global_position = authority_position
 
 @rpc("unreliable")
-func syncatk(attackip):
+func syncatk(attackip, player_atk):
 	if attackip:
 		Global.player_current_attack = true
 		player_atk = true
@@ -127,7 +127,10 @@ func syncatk(attackip):
 func healthsync(health):
 	var healthbar = $Sprite/Camera2D/Control/ProgressBar
 	healthbar.value = health
-
+	if health >= 100:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true
 @rpc("authority", "call_local", "reliable", 1)
 func display_message(message):
 	$Message.text = str(message)

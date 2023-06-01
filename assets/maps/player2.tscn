@@ -6,11 +6,8 @@
 [ext_resource type="Script" path="res://assets/maps/Label.gd" id="4_ebso2"]
 [ext_resource type="AudioStream" uid="uid://c5xvob43lxyvy" path="res://assets/soundfx/Attack.mp3" id="4_m1w2h"]
 [ext_resource type="Script" path="res://assets/maps/menuhelp.gd" id="4_vypy1"]
-[ext_resource type="Texture2D" uid="uid://dgbmanugpjd71" path="res://assets/characters/Odderf/Death-Sheet.png" id="5_ah1gm"]
+[ext_resource type="Texture2D" uid="uid://bp5lwy6fs050b" path="res://assets/characters/Odderf/Attack-Sheet.png" id="5_04k7n"]
 [ext_resource type="Script" path="res://assets/maps/terraindetect.gd" id="6_1p4fq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycjwo"]
-size = Vector2(8, 6)
 
 [sub_resource type="Animation" id="Animation_ajfsy"]
 length = 0.001
@@ -72,6 +69,30 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite:hframes")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite:vframes")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ey4io"]
 _data = {
@@ -106,12 +127,12 @@ properties/0/sync = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48fdw"]
 size = Vector2(14, 14)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_7huxb")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycjwo"]
+size = Vector2(8, 12)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_ycjwo")
+[node name="CharacterBody2D" type="CharacterBody2D"]
+platform_floor_layers = 4294901761
+script = ExtResource("1_7huxb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -129,10 +150,11 @@ stream = ExtResource("4_m1w2h")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(1, 0.96875)
-texture = ExtResource("5_ah1gm")
+texture = ExtResource("5_04k7n")
 offset = Vector2(0, -8)
-hframes = 14
-frame = 13
+hframes = 9
+vframes = 4
+frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="Sprite"]
 zoom = Vector2(5, 5)
@@ -217,6 +239,10 @@ shape = SubResource("RectangleShape2D_48fdw")
 [node name="atktimer" type="Timer" parent="."]
 
 [node name="regen" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ycjwo")
 
 [connection signal="color_changed" from="Sprite/Camera2D/HBoxContainer/ColorPicker" to="Sprite/Camera2D/HBoxContainer" method="_on_color_picker_color_changed"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]

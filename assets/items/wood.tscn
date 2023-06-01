@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cliyikxdk1ka0"]
+
+[ext_resource type="Texture2D" uid="uid://6ux5rgeqsyt4" path="res://addons/gut/unit/test.png" id="1_t0hjd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjob0"]
+
+[node name="Item" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kjob0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t0hjd")
