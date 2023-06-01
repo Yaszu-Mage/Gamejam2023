@@ -1,5 +1,5 @@
 extends StaticBody2D
-var health = 100
+var health = 0
 var can_dmg = false
 var cool = true
 
@@ -24,6 +24,7 @@ func dmg():
 		if moon >= 3:
 			var item = preload("res://assets/items/wood.tscn").instantiate()
 			add_sibling(item)
+			item.position = self.position
 			dmg()
 		else:
 			print("kys")
