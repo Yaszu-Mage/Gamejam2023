@@ -3,6 +3,7 @@ extends CanvasModulate
 var blood = null
 var bloodmoon = true
 var bloodjust = false
+@warning_ignore("unused_parameter")
 func _process(delta):
 	pass
 	
@@ -12,6 +13,7 @@ func _ready():
 	self.visible = false
 
 
+@warning_ignore("unused_parameter")
 func _on_animation_player_animation_finished(anim_name):
 	time()
 	musicoff()

@@ -24,6 +24,7 @@ func _on_Start_pressed():
 
 
 func _on_Options_pressed():
+	@warning_ignore("unused_variable", "shadowed_variable")
 	var options = load("res://assets/scenes/options.tscn").instance()
 	get_tree().change_scene("res://assets/scenes/options.tscn")
 
@@ -31,4 +32,5 @@ func _on_Options_pressed():
 
 
 func _on_Quit_pressed():
+	@warning_ignore("standalone_expression", "standalone_expression", "standalone_expression", "standalone_expression", "standalone_expression", "standalone_expression")
 	get_tree().quit

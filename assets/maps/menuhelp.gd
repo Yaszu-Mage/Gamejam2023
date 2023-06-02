@@ -8,7 +8,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_end"):
 		if is_multiplayer_authority():
 			if menvisible == true:
@@ -17,7 +17,6 @@ func _process(delta):
 			else:
 				invmenu.visible = true
 				menvisible = true
-		var player = $"../.."
 		if Global.color_sub:
 			var color = player.self_modulate
 			rpc("colorsync", color)

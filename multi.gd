@@ -64,5 +64,5 @@ func _on_line_edit_text_changed(new_text):
 	ADDRESS = new_text
 
 
-func _on_area_2d_body_exited(body):
+func _on_area_2d_body_exited(_body):
 	pass # Replace with function body.

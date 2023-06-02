@@ -9,6 +9,7 @@ var player_inattack = false
 var alive = true
 var attack_ip = false
 var can_take_dmg = true
+@warning_ignore("unused_parameter")
 func _physics_process(delta):
 	deal_with_damage()
 	if player_chase:
@@ -32,6 +33,7 @@ func _on_detect_body_entered(body):
 	player_chase = true
 
 
+@warning_ignore("unused_parameter")
 func _process(delta):
 	var healthbar = $ProgressBar
 	if alive == false:
@@ -39,14 +41,20 @@ func _process(delta):
 		player_chase = false
 		$enemy_hitbox.monitoring = false
 		self.visible = false
+		Global.kills = +1
 	else:
 		$enemy_hitbox.monitoring = true
 		self.visible = true
-	healthbar.value = health
+		if Global.kills == +5:
+			Global.level = +1
+		if Global.level == +1:
+			Global.strength = +10
+			Global.mana = +10
+		healthbar.value = health
+@warning_ignore("unused_parameter")
 func _on_detect_body_exited(body):
 	player = null
 	player_chase = false
-
 func enemy():
 	pass
 

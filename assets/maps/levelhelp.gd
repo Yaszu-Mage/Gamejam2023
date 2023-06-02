@@ -1,5 +1,5 @@
-extends Label
-var level = 0
+extends Node2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -7,6 +7,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-@warning_ignore("unused_parameter")
-func _process(delta):
-	pass
+func _process(_delta):
+	Global.mana = $Mana2.max_value
+	Global.stamina = $Stamina.max_value
+	if Global.level == +1:
+		Global.mana = +10
+		Global.stamina = +10

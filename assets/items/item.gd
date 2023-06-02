@@ -7,10 +7,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+@warning_ignore("unused_parameter")
 func _process(delta):
 	pass
 
 
+@warning_ignore("unused_parameter")
 func _on_pickup_radius_area_entered(area):
 	pass
 

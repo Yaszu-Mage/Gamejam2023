@@ -19,12 +19,16 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+@warning_ignore("unused_parameter")
 func _process(delta):
 	pass
 
 
+@warning_ignore("unused_parameter")
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	_processtilemap(body, body_rid)
 
+@warning_ignore("unused_parameter")
 func _processtilemap(body: Node2D, bodyrid: RID) -> void:
+	@warning_ignore("unused_variable")
 	var currenttilemap = body

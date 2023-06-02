@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4m6s8q5tnw36"]
+[gd_scene load_steps=26 format=3 uid="uid://c4m6s8q5tnw36"]
 
 [ext_resource type="Script" path="res://assets/maps/player2.gd" id="1_7huxb"]
 [ext_resource type="AnimationLibrary" uid="uid://ctgfudj4t4dpl" path="res://assets/characters/Odderf/odderf.res" id="2_o8t5t"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://assets/maps/menuhelp.gd" id="4_vypy1"]
 [ext_resource type="Texture2D" uid="uid://bp5lwy6fs050b" path="res://assets/characters/Odderf/Attack-Sheet.png" id="5_04k7n"]
 [ext_resource type="Script" path="res://assets/maps/terraindetect.gd" id="6_1p4fq"]
+[ext_resource type="Theme" uid="uid://jnl8bgp4r30n" path="res://assets/rog.tres" id="7_d6ptc"]
+[ext_resource type="Script" path="res://assets/maps/levelhelp.gd" id="7_n7lo8"]
 
 [sub_resource type="Animation" id="Animation_ajfsy"]
 length = 0.001
@@ -109,6 +111,27 @@ bg_color = Color(1, 0.329412, 0.376471, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_8hmlm")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_os5mv")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vk3m"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeuyh"]
+bg_color = Color(0, 0.27451, 0.788235, 1)
+
+[sub_resource type="Theme" id="Theme_hmyoj"]
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 100
+ProgressBar/styles/background = SubResource("StyleBoxFlat_7vk3m")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_xeuyh")
+
+[sub_resource type="Theme" id="Theme_ftryc"]
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 100
+ProgressBar/styles/background = SubResource("StyleBoxFlat_7vk3m")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_xeuyh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxrft"]
+bg_color = Color(0.560784, 0, 0, 1)
+
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_jxyd1"]
 properties/0/path = NodePath("AnimationPlayer:current_animation")
 properties/0/spawn = true
@@ -189,6 +212,66 @@ script = ExtResource("4_vypy1")
 [node name="ColorPicker" type="ColorPicker" parent="Sprite/Camera2D/HBoxContainer"]
 layout_mode = 2
 
+[node name="Node2D" type="Node2D" parent="Sprite/Camera2D"]
+script = ExtResource("7_n7lo8")
+
+[node name="Mana2" type="ProgressBar" parent="Sprite/Camera2D/Node2D"]
+offset_left = -61.0
+offset_top = 56.7742
+offset_right = 27.0
+offset_bottom = 71.7742
+scale = Vector2(0.4, 0.4)
+theme = SubResource("Theme_hmyoj")
+show_percentage = false
+
+[node name="Strength" type="Label" parent="Sprite/Camera2D/Node2D"]
+offset_left = -113.0
+offset_top = 45.4194
+offset_right = -17.0
+offset_bottom = 71.4194
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_d6ptc")
+text = "Strength:"
+
+[node name="Mana" type="Label" parent="Sprite/Camera2D/Node2D"]
+offset_left = -58.0
+offset_top = 45.4194
+offset_right = 38.0
+offset_bottom = 71.4194
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_d6ptc")
+text = "Mana:"
+
+[node name="Strengthlvl" type="Label" parent="Sprite/Camera2D/Node2D"]
+offset_left = -77.0
+offset_top = 45.4194
+offset_right = -7.0
+offset_bottom = 71.4194
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_d6ptc")
+theme_override_colors/font_color = Color(1, 0, 0.203922, 1)
+text = "0"
+
+[node name="Strengthlvl2" type="Label" parent="Sprite/Camera2D/Node2D"]
+offset_left = -33.0
+offset_top = 45.4194
+offset_right = 37.0
+offset_bottom = 71.4194
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_d6ptc")
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+text = "0"
+
+[node name="Stamina" type="ProgressBar" parent="Sprite/Camera2D/Node2D"]
+offset_left = -111.0
+offset_top = 56.7742
+offset_right = -23.0
+offset_bottom = 71.7742
+scale = Vector2(0.4, 0.4)
+theme = SubResource("Theme_ftryc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uxrft")
+show_percentage = false
+
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite"]
 emitting = false
 amount = 100
@@ -239,6 +322,7 @@ shape = SubResource("RectangleShape2D_48fdw")
 [node name="atktimer" type="Timer" parent="."]
 
 [node name="regen" type="Timer" parent="."]
+wait_time = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

@@ -23,8 +23,8 @@ var res = true
 func _ready():
 	name = str(get_multiplayer_authority())
 
-func _physics_process(delta):
-
+func _physics_process(_delta):
+	
 	if is_multiplayer_authority():
 		if Input.is_action_just_pressed("Interact"):
 			Global.player_current_attack = true
@@ -56,7 +56,6 @@ func _physics_process(delta):
 			direction.x = action * SPEED
 			if direction.x <= 1:
 				animation.play("odderf/leftwalk")
-				playerstate.direction
 				lastmove = 1
 			if direction.x >= -1:
 				animation.play("odderf/rightwalk")
@@ -105,6 +104,7 @@ func _physics_process(delta):
 			healthbar.visible = false
 		else:
 			healthbar.visible = true
+			$regen.start()
 		
 		rpc("healthsync", health)
 		
@@ -114,6 +114,7 @@ func remote_set_position(authority_position):
 	global_position = authority_position
 
 @rpc("unreliable")
+@warning_ignore("shadowed_variable", "unused_parameter")
 func syncatk(attackip, player_atk):
 	if attackip:
 		Global.player_current_attack = true
@@ -124,6 +125,7 @@ func syncatk(attackip, player_atk):
 
 
 @rpc("unreliable")
+@warning_ignore("shadowed_variable")
 func healthsync(health):
 	var healthbar = $Sprite/Camera2D/Control/ProgressBar
 	healthbar.value = health
@@ -136,6 +138,7 @@ func display_message(message):
 	$Message.text = str(message)
 
 @rpc("unreliable")
+@warning_ignore("shadowed_variable")
 func animationsync(currentanimation):
 	$AnimationPlayer.current_animation = currentanimation
 @rpc("any_peer", "call_local", "reliable", 1)
@@ -147,6 +150,7 @@ func staminareco():
 		await get_tree().create_timer(1.0).timeout
 		stamina = stamina + 10
 
+@warning_ignore("unused_parameter", "shadowed_variable_base_class")
 func _on_mouse_click_area_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton:
 		rpc("clicked_by_player")
@@ -184,8 +188,17 @@ func enemy_atk():
 func player():
 	pass
 
+@warning_ignore("unused_parameter")
 func _process(delta):
 	currentanimation = $AnimationPlayer.current_animation
+	if health <= 100:
+		await get_tree().create_timer(1).timeout
+		if health < 100:
+			health = health + 20
+		if health > 100:
+			health = 100
+		if health <= 0:
+			health = 0
 
 
 func _on_atkcool_timeout():
@@ -196,7 +209,13 @@ func _on_death_timeout():
 	deathtimer = true
 
 
-
+func regen():
+	if health < 100:
+		health = health + 20
+	if health > 100:
+		health = 100
+	if health <= 0:
+		health = 0
 
 
 func _on_atktimer_timeout():
@@ -206,9 +225,10 @@ func _on_atktimer_timeout():
 
 
 func _on_regen_timeout():
+	$regen.stop()
 	if health < 100:
 		health = health + 20
-		if health > 100:
-			health = 100
+	if health > 100:
+		health = 100
 	if health <= 0:
 		health = 0

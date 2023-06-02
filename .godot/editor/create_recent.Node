@@ -1,3 +1,8 @@
+Node2D
+ProgressBar
+Label
+CanvasLayer
+TextEdit
 TileMap
 CollisionShape2D
 Area2D
@@ -8,9 +13,7 @@ Camera2D
 Sprite2D
 StaticBody2D
 MultiplayerSynchronizer
-ProgressBar
 AudioStreamPlayer2D
-Node2D
 AudioStreamPlayer
 AudioListener2D
 ColorPicker
@@ -20,7 +23,6 @@ HBoxContainer
 Control
 CanvasModulate
 CharacterBody2D
-Label
 LineEdit
 Button
 VBoxContainer

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://debnitjqa5cbe"]
+[gd_scene load_steps=5 format=3 uid="uid://debnitjqa5cbe"]
 
 [ext_resource type="Script" path="res://assets/scenes/start.gd" id="1"]
 [ext_resource type="TileSet" uid="uid://dq0h2rjatysr1" path="res://assets/tilemaps/fulldesmond.tres" id="3"]
@@ -7,6 +7,9 @@
 background_mode = 4
 glow_enabled = true
 glow_intensity = 5.63
+
+[sub_resource type="Theme" id="Theme_los0o"]
+Label/font_sizes/font_size = 48
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -71,6 +74,15 @@ text = "Options"
 modulate = Color(1, 0.435294, 0.435294, 1)
 layout_mode = 2
 text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 141.0
+offset_right = 816.0
+offset_bottom = 296.0
+theme = SubResource("Theme_los0o")
+text = "Odyssey"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_Options_pressed"]

@@ -557,7 +557,19 @@ text = "Unique Peer ID"
 horizontal_alignment = 1
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_anmc4")]
-position = Vector2(-129, 11)
+position = Vector2(-123, 22)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("4_anmc4")]
+position = Vector2(-171, 166)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("4_anmc4")]
+position = Vector2(3, 137)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("4_anmc4")]
+position = Vector2(-286, -57)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("4_anmc4")]
+position = Vector2(-63, -107)
 
 [node name="Area2D" type="Area2D" parent="."]
 
