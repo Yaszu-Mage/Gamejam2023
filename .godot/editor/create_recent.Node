@@ -1,3 +1,4 @@
+Sprite2D
 Node2D
 ProgressBar
 Label
@@ -10,7 +11,6 @@ AnimationPlayer
 AnimationTree
 Timer
 Camera2D
-Sprite2D
 StaticBody2D
 MultiplayerSynchronizer
 AudioStreamPlayer2D

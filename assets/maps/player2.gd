@@ -10,7 +10,8 @@ var attackip = false
 var player_atk = false
 var player_range = false
 @onready var sync = $MultiplayerSynchronizer
-@onready var health = $ProgressBar2.value
+var health = 100
+@onready var healthbar = $Sprite/Camera2D/Control/ProgressBar
 var alive = true
 var deathtimer = false
 enum playerstate {
@@ -96,7 +97,7 @@ func _physics_process(_delta):
 		rpc("animationsync", currentanimation)
 		rpc("syncatk", attackip, player_atk)
 		
-		var healthbar = $Sprite/Camera2D/Control/ProgressBar
+		healthbar = $Sprite/Camera2D/Control/ProgressBar
 		
 		healthbar.value = health
 		
@@ -104,7 +105,6 @@ func _physics_process(_delta):
 			healthbar.visible = false
 		else:
 			healthbar.visible = true
-			$regen.start()
 		
 		rpc("healthsync", health)
 		
@@ -191,14 +191,6 @@ func player():
 @warning_ignore("unused_parameter")
 func _process(delta):
 	currentanimation = $AnimationPlayer.current_animation
-	if health <= 100:
-		await get_tree().create_timer(1).timeout
-		if health < 100:
-			health = health + 20
-		if health > 100:
-			health = 100
-		if health <= 0:
-			health = 0
 
 
 func _on_atkcool_timeout():

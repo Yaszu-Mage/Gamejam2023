@@ -14,6 +14,7 @@ config/name="Odyssey"
 run/main_scene="res://assets/scenes/mainmenu.tscn"
 config/features=PackedStringArray("4.0")
 run/low_processor_mode=true
+boot_splash/bg_color=Color(0.27451, 0.0235294, 0.105882, 1)
 boot_splash/image="res://icon.png"
 config/icon="res://icoicoicoico.png"
 
