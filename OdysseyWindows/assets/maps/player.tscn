@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3ri0olbecg3f"]
+
+[ext_resource type="PackedScene" uid="uid://c4m6s8q5tnw36" path="res://assets/maps/player2.tscn" id="1_nhxbp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -85.0
+offset_top = -46.0
+offset_right = 70.0
+offset_bottom = 46.0
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_nhxbp")]

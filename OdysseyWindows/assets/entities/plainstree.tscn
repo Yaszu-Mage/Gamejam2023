@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmlhqydpajedo"]
+
+[ext_resource type="Script" path="res://assets/entities/plainstree.gd" id="1_exaik"]
+[ext_resource type="Texture2D" uid="uid://0j4gaj0q1i5s" path="res://assets/tilemaps/desmond.png" id="1_yh444"]
+[ext_resource type="Shape2D" uid="uid://65xthtoaxfpw" path="res://assets/entities/plainstreecollide.tres" id="3_ygu8q"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_3gq63"]
+properties/0/path = NodePath("Sprite2D:visible")
+properties/0/spawn = true
+properties/0/sync = true
+
+[node name="Tree" type="StaticBody2D"]
+position = Vector2(79, 52)
+script = ExtResource("1_exaik")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yh444")
+region_enabled = true
+region_rect = Rect2(31, 310, 34, 42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = ExtResource("3_ygu8q")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_3gq63")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = ExtResource("3_ygu8q")
+
+[node name="dmgcool" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="dmgcool" to="." method="_on_dmgcool_timeout"]

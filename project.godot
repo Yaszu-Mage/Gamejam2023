@@ -14,8 +14,13 @@ config/name="Odyssey"
 run/main_scene="res://assets/scenes/mainmenu.tscn"
 config/features=PackedStringArray("4.0")
 run/low_processor_mode=true
+boot_splash/bg_color=Color(0.27451, 0.0235294, 0.105882, 1)
 boot_splash/image="res://icon.png"
-config/icon="res://icon.png"
+config/icon="res://icoicoicoico.png"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [editor_plugins]
 
@@ -56,6 +61,12 @@ texture={
 
 [input]
 
+ui_end={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194318,"physical_keycode":0,"key_label":0,"unicode":4194318,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
 Interact={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":69,"physical_keycode":0,"key_label":0,"unicode":101,"echo":false,"script":null)

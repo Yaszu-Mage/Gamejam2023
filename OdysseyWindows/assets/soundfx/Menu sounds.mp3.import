@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nu6p7u65uljm"
+path="res://.godot/imported/Menu sounds.mp3-625dc6c644c57f9fd33c2dfc4c01d1a1.mp3str"
+
+[deps]
+
+source_file="res://OdysseyWindows/assets/soundfx/Menu sounds.mp3"
+dest_files=["res://.godot/imported/Menu sounds.mp3-625dc6c644c57f9fd33c2dfc4c01d1a1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
