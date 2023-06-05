@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jfxojtxq6j3t"
+path="res://.godot/imported/Hammer on Metal.mp3-5717001f3df9b4fc8e96cba05bbef239.mp3str"
+
+[deps]
+
+source_file="res://OdysseyWindows/assets/soundfx/Hammer on Metal.mp3"
+dest_files=["res://.godot/imported/Hammer on Metal.mp3-5717001f3df9b4fc8e96cba05bbef239.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

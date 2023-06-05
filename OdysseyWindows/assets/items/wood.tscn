@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://cliyikxdk1ka0"]
+
+[ext_resource type="Script" path="res://assets/items/item.gd" id="1_13o5v"]
+[ext_resource type="Texture2D" uid="uid://cax6l284e2khn" path="res://assets/items/items-removebg-preview.png" id="2_3641g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjob0"]
+
+[sub_resource type="Animation" id="Animation_atpen"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pickup radius/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ywbhv"]
+resource_name = "item"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 15), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 15), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pickup radius/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 15), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q1asf"]
+_data = {
+"RESET": SubResource("Animation_atpen"),
+"item": SubResource("Animation_ywbhv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o71iy"]
+
+[node name="Item" type="StaticBody2D"]
+script = ExtResource("1_13o5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kjob0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3641g")
+hframes = 16
+vframes = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 0.2
+libraries = {
+"": SubResource("AnimationLibrary_q1asf")
+}
+
+[node name="Pickup radius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup radius"]
+shape = SubResource("RectangleShape2D_o71iy")
+
+[connection signal="area_entered" from="Pickup radius" to="." method="_on_pickup_radius_area_entered"]
+[connection signal="body_entered" from="Pickup radius" to="." method="_on_pickup_radius_body_entered"]

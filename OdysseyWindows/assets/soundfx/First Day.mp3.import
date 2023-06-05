@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b88tvbwlp0jqa"
+path="res://.godot/imported/First Day.mp3-b0c63c98aab9fe4e9a827b1f80f7f813.mp3str"
+
+[deps]
+
+source_file="res://OdysseyWindows/assets/soundfx/First Day.mp3"
+dest_files=["res://.godot/imported/First Day.mp3-b0c63c98aab9fe4e9a827b1f80f7f813.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

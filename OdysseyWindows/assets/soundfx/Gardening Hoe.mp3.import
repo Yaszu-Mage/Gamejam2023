@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2a7yc0dd21mw"
+path="res://.godot/imported/Gardening Hoe.mp3-c1325eabb178fcc64b112f816ad640c0.mp3str"
+
+[deps]
+
+source_file="res://OdysseyWindows/assets/soundfx/Gardening Hoe.mp3"
+dest_files=["res://.godot/imported/Gardening Hoe.mp3-c1325eabb178fcc64b112f816ad640c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

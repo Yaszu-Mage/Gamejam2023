@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8wi03nmsuhrm"
+path="res://.godot/imported/Get item.mp3-2e4c1f8c0bd5b3868dc3cc92122168c2.mp3str"
+
+[deps]
+
+source_file="res://OdysseyWindows/assets/soundfx/Get item.mp3"
+dest_files=["res://.godot/imported/Get item.mp3-2e4c1f8c0bd5b3868dc3cc92122168c2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

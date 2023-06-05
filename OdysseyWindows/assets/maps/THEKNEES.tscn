@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/tilemaps/images/RVNature.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 8.5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -86, 58 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 3, 48.941, 42.2215, 47.059 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
+position = Vector2( 1, 11 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( -41, 10 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 4.85346, -0.178711, 38.2991, 48.2747 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 0, 14 )
+shape = SubResource( 1 )

@@ -1,0 +1,16 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://d34dpamq30tpu"
+path="res://.godot/imported/source_code_pro.fnt-ca99763caa7bfe1599346b6f45d5bcb8.fontdata"
+
+[deps]
+
+source_file="res://OdysseyWindows/addons/gut/source_code_pro.fnt"
+dest_files=["res://.godot/imported/source_code_pro.fnt-ca99763caa7bfe1599346b6f45d5bcb8.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true

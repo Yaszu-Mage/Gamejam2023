@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpmihtgx1lm52"
+path="res://.godot/imported/Dark Chi.mp3-6fb2fed14e57fbb6e10f5901e884a906.mp3str"
+
+[deps]
+
+source_file="res://OdysseyWindows/assets/soundfx/Dark Chi.mp3"
+dest_files=["res://.godot/imported/Dark Chi.mp3-6fb2fed14e57fbb6e10f5901e884a906.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

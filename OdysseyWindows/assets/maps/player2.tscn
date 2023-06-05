@@ -1,0 +1,338 @@
+[gd_scene load_steps=26 format=3 uid="uid://c4m6s8q5tnw36"]
+
+[ext_resource type="Script" path="res://assets/maps/player2.gd" id="1_7huxb"]
+[ext_resource type="AnimationLibrary" uid="uid://ctgfudj4t4dpl" path="res://assets/characters/Odderf/odderf.res" id="2_o8t5t"]
+[ext_resource type="AudioStream" uid="uid://c4vyou5cof7jn" path="res://assets/soundfx/walking on snow.mp3" id="3_7mwhx"]
+[ext_resource type="Script" path="res://assets/maps/Label.gd" id="4_ebso2"]
+[ext_resource type="AudioStream" uid="uid://c5xvob43lxyvy" path="res://assets/soundfx/Attack.mp3" id="4_m1w2h"]
+[ext_resource type="Script" path="res://assets/maps/menuhelp.gd" id="4_vypy1"]
+[ext_resource type="Texture2D" uid="uid://bp5lwy6fs050b" path="res://assets/characters/Odderf/Attack-Sheet.png" id="5_04k7n"]
+[ext_resource type="Script" path="res://assets/maps/terraindetect.gd" id="6_1p4fq"]
+[ext_resource type="Theme" uid="uid://jnl8bgp4r30n" path="res://assets/rog.tres" id="7_d6ptc"]
+[ext_resource type="Script" path="res://assets/maps/levelhelp.gd" id="7_n7lo8"]
+
+[sub_resource type="Animation" id="Animation_ajfsy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -8)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:offset:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Node2D/walking:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Node2D/atk:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite:hframes")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite:vframes")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ey4io"]
+_data = {
+"RESET": SubResource("Animation_ajfsy")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hmlm"]
+bg_color = Color(0.878431, 0.827451, 0.980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os5mv"]
+bg_color = Color(1, 0.329412, 0.376471, 1)
+
+[sub_resource type="Theme" id="Theme_1egj5"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_8hmlm")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_os5mv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vk3m"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeuyh"]
+bg_color = Color(0, 0.27451, 0.788235, 1)
+
+[sub_resource type="Theme" id="Theme_hmyoj"]
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 100
+ProgressBar/styles/background = SubResource("StyleBoxFlat_7vk3m")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_xeuyh")
+
+[sub_resource type="Theme" id="Theme_ftryc"]
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 100
+ProgressBar/styles/background = SubResource("StyleBoxFlat_7vk3m")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_xeuyh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxrft"]
+bg_color = Color(0.560784, 0, 0, 1)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_jxyd1"]
+properties/0/path = NodePath("AnimationPlayer:current_animation")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath("Sprite:self_modulate")
+properties/1/spawn = true
+properties/1/sync = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_llefm"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ds2ne"]
+properties/0/path = NodePath("Sprite:self_modulate")
+properties/0/spawn = true
+properties/0/sync = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48fdw"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycjwo"]
+size = Vector2(8, 12)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+platform_floor_layers = 4294901761
+script = ExtResource("1_7huxb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ey4io"),
+"odderf": ExtResource("2_o8t5t")
+}
+
+[node name="Node2D" type="Node2D" parent="AnimationPlayer"]
+
+[node name="walking" type="AudioStreamPlayer2D" parent="AnimationPlayer/Node2D"]
+stream = ExtResource("3_7mwhx")
+
+[node name="atk" type="AudioStreamPlayer2D" parent="AnimationPlayer/Node2D"]
+stream = ExtResource("4_m1w2h")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.96875)
+texture = ExtResource("5_04k7n")
+offset = Vector2(0, -8)
+hframes = 9
+vframes = 4
+frame = 1
+
+[node name="Camera2D" type="Camera2D" parent="Sprite"]
+zoom = Vector2(5, 5)
+limit_smoothed = true
+
+[node name="Control" type="Control" parent="Sprite/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Sprite/Camera2D/Control"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -12.3871
+offset_right = 58.0
+offset_bottom = -3.3871
+scale = Vector2(0.4, 0.4)
+theme = SubResource("Theme_1egj5")
+value = 100.0
+show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Sprite/Camera2D"]
+visible = false
+offset_left = -90.0
+offset_top = -30.0
+offset_right = 200.0
+offset_bottom = 538.0
+scale = Vector2(0.170586, 0.147514)
+script = ExtResource("4_vypy1")
+
+[node name="ColorPicker" type="ColorPicker" parent="Sprite/Camera2D/HBoxContainer"]
+layout_mode = 2
+
+[node name="Node2D" type="Node2D" parent="Sprite/Camera2D"]
+script = ExtResource("7_n7lo8")
+
+[node name="Mana2" type="ProgressBar" parent="Sprite/Camera2D/Node2D"]
+offset_left = -61.0
+offset_top = 56.7742
+offset_right = 27.0
+offset_bottom = 71.7742
+scale = Vector2(0.4, 0.4)
+theme = SubResource("Theme_hmyoj")
+show_percentage = false
+
+[node name="Strength" type="Label" parent="Sprite/Camera2D/Node2D"]
+offset_left = -113.0
+offset_top = 45.4194
+offset_right = -17.0
+offset_bottom = 71.4194
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_d6ptc")
+text = "Strength:"
+
+[node name="Mana" type="Label" parent="Sprite/Camera2D/Node2D"]
+offset_left = -58.0
+offset_top = 45.4194
+offset_right = 38.0
+offset_bottom = 71.4194
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_d6ptc")
+text = "Mana:"
+
+[node name="Strengthlvl" type="Label" parent="Sprite/Camera2D/Node2D"]
+offset_left = -77.0
+offset_top = 45.4194
+offset_right = -7.0
+offset_bottom = 71.4194
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_d6ptc")
+theme_override_colors/font_color = Color(1, 0, 0.203922, 1)
+text = "0"
+
+[node name="Strengthlvl2" type="Label" parent="Sprite/Camera2D/Node2D"]
+offset_left = -33.0
+offset_top = 45.4194
+offset_right = 37.0
+offset_bottom = 71.4194
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_d6ptc")
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+text = "0"
+
+[node name="Stamina" type="ProgressBar" parent="Sprite/Camera2D/Node2D"]
+offset_left = -111.0
+offset_top = 56.7742
+offset_right = -23.0
+offset_bottom = 71.7742
+scale = Vector2(0.4, 0.4)
+theme = SubResource("Theme_ftryc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uxrft")
+show_percentage = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite"]
+emitting = false
+amount = 100
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(100, 100)
+orbit_velocity_max = 1000.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+process_mode = 3
+replication_config = SubResource("SceneReplicationConfig_jxyd1")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("4_ebso2")
+
+[node name="player_hitbox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+shape = SubResource("CircleShape2D_llefm")
+
+[node name="atkcool" type="Timer" parent="."]
+
+[node name="death" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0
+value = 100.0
+
+[node name="MultiplayerSynchronizer2" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_ds2ne")
+public_visibility = false
+
+[node name="terraindetect" type="Area2D" parent="."]
+script = ExtResource("6_1p4fq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="terraindetect"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_48fdw")
+
+[node name="atktimer" type="Timer" parent="."]
+
+[node name="regen" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ycjwo")
+
+[connection signal="color_changed" from="Sprite/Camera2D/HBoxContainer/ColorPicker" to="Sprite/Camera2D/HBoxContainer" method="_on_color_picker_color_changed"]
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="atkcool" to="." method="_on_atkcool_timeout"]
+[connection signal="timeout" from="death" to="." method="_on_death_timeout"]
+[connection signal="body_shape_entered" from="terraindetect" to="terraindetect" method="_on_body_shape_entered"]
+[connection signal="timeout" from="atktimer" to="." method="_on_atktimer_timeout"]
+[connection signal="timeout" from="regen" to="." method="_on_regen_timeout"]

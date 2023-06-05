@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpg4wp5p6b17r"
+path="res://.godot/imported/Dwarven Depths.mp3-298c6ca39bec049e1d715cf0670b8a1a.mp3str"
+
+[deps]
+
+source_file="res://OdysseyWindows/assets/soundfx/Dwarven Depths.mp3"
+dest_files=["res://.godot/imported/Dwarven Depths.mp3-298c6ca39bec049e1d715cf0670b8a1a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

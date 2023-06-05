@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://r1fef70up26j"
+path="res://.godot/imported/All Tied Up.mp3-9d60e1276ffbf3748009f2718d8047f7.mp3str"
+
+[deps]
+
+source_file="res://OdysseyWindows/assets/soundfx/All Tied Up.mp3"
+dest_files=["res://.godot/imported/All Tied Up.mp3-9d60e1276ffbf3748009f2718d8047f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

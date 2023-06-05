@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmgyg1n3ld3w4"
+path="res://.godot/imported/Blood moon.mp3-12c25abe6c5a23be468484d387ba0112.mp3str"
+
+[deps]
+
+source_file="res://OdysseyWindows/assets/soundfx/Blood moon.mp3"
+dest_files=["res://.godot/imported/Blood moon.mp3-12c25abe6c5a23be468484d387ba0112.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

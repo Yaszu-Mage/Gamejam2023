@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/tilemaps/images/RVTerrain.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 6 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 24 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BIGNOCOL" type="Sprite" parent="."]
+position = Vector2( -67, -1 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 8
+frame = 44
+
+[node name="SMALLNOCOL" type="Sprite" parent="."]
+position = Vector2( -20, -7 )
+texture = ExtResource( 1 )
+hframes = 32
+vframes = 32
+
+[node name="SMALLCOL" type="Sprite" parent="."]
+position = Vector2( 67, -5 )
+texture = ExtResource( 1 )
+hframes = 32
+vframes = 32
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SMALLCOL"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SMALLCOL/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="BIGCOL" type="Sprite" parent="."]
+position = Vector2( -134, -2 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 8
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BIGCOL"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BIGCOL/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="BIGCOL" type="Sprite" parent="BIGCOL"]
+position = Vector2( -134, -2 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 8
+frame = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BIGCOL/BIGCOL"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BIGCOL/BIGCOL/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="BIGCOL" type="Sprite" parent="BIGCOL/BIGCOL"]
+position = Vector2( 317, 17 )
+texture = ExtResource( 1 )
+offset = Vector2( -435, 26 )
+hframes = 8
+vframes = 8
+frame = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BIGCOL/BIGCOL/BIGCOL"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BIGCOL/BIGCOL/BIGCOL/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="BIGCOL" type="Sprite" parent="BIGCOL/BIGCOL/BIGCOL"]
+position = Vector2( -245, -16 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 8
+frame = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BIGCOL/BIGCOL/BIGCOL/BIGCOL"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BIGCOL/BIGCOL/BIGCOL/BIGCOL/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
